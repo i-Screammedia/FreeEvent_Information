@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 디지털 교육자료 무료체험 사용 안내 | 아이스크림미디어</title>
+  <meta name="description" content="AI 디지털 교육자료(수학) 무료체험 EVENT 사용 안내. 선생님은 아이스크림 계정으로, 학생은 QR코드로 이용합니다." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <style>
+    :root {
+      --primary: #3478f6;
+      --primary-dark: #225dd0;
+      --primary-light: #eaf3ff;
+      --accent-yellow: #ffe45c;
+      --accent-orange: #ff985e;
+      --accent-mint: #c8f5e6;
+      --ink: #202638;
+      --muted: #667085;
+      --line: #e6eaf0;
+      --soft: #f6f9ff;
+      --hero: #f3f8ff;
+      --shadow: 0 16px 40px rgba(52, 84, 150, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--ink);
+      font-family: "Pretendard Variable", Pretendard, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    button, input, textarea { font: inherit; }
+    :focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+    [id] { scroll-margin-top: 88px; }
+    ::selection { background: #cfe0ff; }
+
+    .skip {
+      position: absolute;
+      left: 16px;
+      top: -48px;
+      z-index: 80;
+      background: var(--ink);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 999px;
+    }
+    .skip:focus { top: 12px; }
+
+    .wrap {
+      width: min(1200px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(230, 234, 240, 0.9);
+    }
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 72px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand img { width: 148px; height: auto; }
+    .brand-tag {
+      display: none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 6px;
+    }
+    .nav a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+    .nav a:hover { background: var(--soft); }
+    .nav .ghost {
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--hero);
+      padding: 36px 0 28px;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .blob-a { left: -80px; top: 64px; width: 256px; height: 256px; background: #d9e8ff; }
+    .blob-b { right: -40px; top: 34%; width: 280px; height: 280px; background: rgba(255, 228, 92, 0.8); }
+    .blob-c { left: 46%; bottom: 0; width: 160px; height: 160px; background: var(--accent-mint); }
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+    .hero h1 .lead {
+      display: block;
+      font-size: clamp(1.15rem, 2vw, 1.7rem);
+      line-height: 1.35;
+    }
+    .brand-banner {
+      position: relative;
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      margin-top: 28px;
+      padding: 20px 28px 16px;
+      border-radius: 999px;
+      background: #ff6a00;
+    }
+    .brand-banner-title {
+      display: block;
+      color: #fff;
+      font-size: clamp(2.175rem, 4.5vw, 3.225rem);
+      font-weight: 900;
+      letter-spacing: -0.045em;
+      line-height: 1.15;
+      text-align: center;
+    }
+    .aidt-tag {
+      position: absolute;
+      left: 22px;
+      top: -15px;
+      transform: rotate(-10deg);
+      border: 3px solid #fff;
+      border-radius: 999px;
+      background: #2f7cf6;
+      color: #fff;
+      padding: 7px 14px;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      box-shadow: 0 8px 16px rgba(32, 90, 180, 0.28);
+    }
+    .guide-label {
+      display: block;
+      margin-top: 16px;
+      font-size: clamp(1.35rem, 2.6vw, 2.05rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.3;
+    }
+    .hero-copy {
+      margin: 18px 0 0;
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; list-style: none; padding: 0; }
+    .chips li {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid #fff;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 4px 14px rgba(52, 84, 150, 0.06);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .chips svg { color: var(--primary); flex: none; }
+    .status {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid #fff;
+      box-shadow: var(--shadow);
+      max-width: 560px;
+    }
+    .status strong { display: block; font-size: 30px; line-height: 1.35; letter-spacing: -0.03em; }
+    .status p { margin: 4px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+    .status-dot {
+      width: 14px;
+      height: 14px;
+      margin-top: 12px;
+      border-radius: 50%;
+      background: #ff2a2a;
+      flex: none;
+      animation: status-blink 1.15s ease-in-out infinite;
+    }
+    @keyframes status-blink {
+      0%, 100% {
+        background: #ff5a5a;
+        box-shadow:
+          0 0 0 0 rgba(255, 40, 40, 0.15),
+          0 0 8px 2px rgba(255, 70, 70, 0.35);
+        opacity: 0.72;
+      }
+      50% {
+        background: #ff1414;
+        box-shadow:
+          0 0 0 8px rgba(255, 45, 45, 0.28),
+          0 0 22px 8px rgba(255, 30, 30, 0.95),
+          0 0 40px 14px rgba(255, 90, 90, 0.65);
+        opacity: 1;
+      }
+    }
+
+    .scene {
+      position: relative;
+      aspect-ratio: 100 / 96;
+      max-width: 540px;
+      margin: 0 auto;
+      background-image: radial-gradient(circle, rgba(52, 120, 246, 0.28) 1.3px, transparent 1.5px);
+      background-size: 26px 26px;
+    }
+    .scene img.people {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 86%;
+      transform: translateX(-50%);
+      z-index: 3;
+      filter: drop-shadow(0 18px 18px rgba(70, 84, 150, 0.16));
+    }
+    .float {
+      position: absolute;
+      z-index: 2;
+      filter: drop-shadow(0 14px 12px rgba(70, 84, 150, 0.22));
+      animation: bob 7s ease-in-out infinite;
+    }
+    .float img { width: 100%; height: auto; }
+    .f1 { left: 2%; top: 2%; width: 18%; }
+    .f2 { left: 30%; top: 0; width: 14%; animation-delay: -1.2s; }
+    .f3 { left: 50%; top: 10%; width: 22%; animation-delay: -2.3s; }
+    .f4 { right: 4%; top: 1%; width: 12%; animation-delay: -3.2s; }
+    .f5 { right: 2%; top: 22%; width: 12%; animation-delay: -0.6s; }
+    .f6 { right: 20%; top: 30%; width: 10%; animation-delay: -1.8s; }
+    .f7 { left: 0; top: 26%; width: 15%; animation-delay: -2.8s; }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .prize {
+      position: relative;
+      margin-top: 36px;
+      background: var(--accent-yellow);
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 22px 18px 32px;
+    }
+    .prize-copy { flex: 1; min-width: 0; }
+    .prize-title {
+      margin: 0;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.45;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+    }
+    .prize-title span { color: #018c3a; }
+    .prize-note {
+      margin: 8px 0 0;
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      font-weight: 800;
+      line-height: 1.45;
+      letter-spacing: -0.03em;
+      color: #e03131;
+    }
+    .prize-visual {
+      width: 220px;
+      height: auto;
+      flex: none;
+      filter: drop-shadow(0 12px 16px rgba(1, 140, 58, 0.24));
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 56px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 17px;
+      border: 0;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(52, 120, 246, 0.35);
+      flex: none;
+    }
+    .btn:hover { background: var(--primary-dark); }
+    .btn.light {
+      background: #fff;
+      color: var(--ink);
+      box-shadow: none;
+      border: 1px solid var(--line);
+    }
+    section { padding: 84px 0; }
+    .eyebrow {
+      margin: 0;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 18px;
+    }
+    h2 {
+      margin: 10px 0 0;
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+    }
+    .section-lead { margin: 14px 0 0; color: var(--muted); font-size: 17px; line-height: 1.7; max-width: 720px; }
+
+    .soft { background: var(--soft); }
+    .rounds {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 32px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 26px;
+    }
+    .round-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+    .round-label.round-2 { color: #c2410c; }
+    .card h3 { margin: 12px 0 0; font-size: 28px; letter-spacing: -0.03em; }
+    .meta { margin: 8px 0 0; color: var(--muted); }
+    .timeline { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 12px; }
+    .timeline li {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+    .timeline b {
+      display: inline-flex;
+      justify-content: center;
+      padding: 6px 0;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 13px;
+    }
+    .round-2 .timeline b { background: #fff1e6; color: #c2410c; }
+    .notice { padding: 36px 0 0; }
+    .notice-card {
+      border: 2px solid #ffc9c9;
+      background: linear-gradient(180deg, #fff8f8 0%, #fff 42%);
+      border-radius: 28px;
+      padding: 28px 28px 24px;
+      box-shadow: 0 16px 40px rgba(224, 49, 49, 0.1);
+    }
+    .notice-badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: #e03131;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      padding: 6px 12px;
+    }
+    .notice h2 { max-width: 16em; }
+    .notice-lead {
+      margin: 16px 0 0;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+    .notice-lead strong { color: #e03131; }
+    .notice-points {
+      display: grid;
+      gap: 10px;
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .notice-points li {
+      background: #fff;
+      border: 1px solid #ffd6d6;
+      border-radius: 18px;
+      padding: 14px 16px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.55;
+    }
+    .notice-points span {
+      display: block;
+      margin-bottom: 2px;
+      color: #e03131;
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .notice-foot {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .notice-foot a { color: var(--primary); font-weight: 800; }
+    .callout {
+      margin: 18px auto 0;
+      width: fit-content;
+      max-width: 100%;
+      background: #fff4c8;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 700;
+      text-align: center;
+      box-shadow: 0 8px 22px rgba(255, 214, 120, 0.28);
+    }
+    .notes { margin: 18px 0 0; padding: 0; color: var(--muted); line-height: 1.7; }
+    .notes li { margin-top: 6px; }
+    .notes .note-strong { color: #e03131; font-weight: 800; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+    .step { position: relative; }
+    .step-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .step-no {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+      flex: none;
+    }
+    .step-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      align-self: stretch;
+      width: 196px;
+      min-height: 148px;
+      padding: 20px 22px;
+      overflow: hidden;
+      border-radius: 28px;
+      background: #ff6a00;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.25;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 8px 18px rgba(255, 106, 0, 0.32);
+      animation: server-glow 1.8s ease-in-out infinite;
+    }
+    .step-link-label { position: relative; z-index: 1; }
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, 0.72) 50%, transparent 68%);
+      transform: translateX(-130%);
+      animation: server-shine 2.4s ease-in-out infinite;
+    }
+    .spark {
+      position: absolute;
+      z-index: 1;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      clip-path: polygon(50% 0%, 62% 34%, 100% 38%, 70% 60%, 80% 100%, 50% 76%, 20% 100%, 30% 60%, 0 38%, 38% 34%);
+      animation: twinkle 1.3s ease-in-out infinite;
+    }
+    .spark-a { top: 10px; right: 10px; }
+    .spark-b { bottom: 12px; left: 12px; width: 7px; height: 7px; animation-delay: 0.55s; }
+    .step-link:hover { background: #e85f00; }
+    @keyframes server-shine {
+      0%, 42% { transform: translateX(-130%); }
+      78%, 100% { transform: translateX(130%); }
+    }
+    @keyframes server-glow {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 214, 0, 0), 0 8px 18px rgba(255, 106, 0, 0.35);
+      }
+      50% {
+        box-shadow:
+          0 0 0 12px rgba(255, 220, 0, 0.95),
+          0 0 36px 16px rgba(255, 196, 0, 0.9),
+          0 10px 24px rgba(255, 106, 0, 0.45);
+      }
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.15; transform: scale(0.55); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+    .step h3 { margin: 18px 0 0; font-size: 20px; }
+    .step p { margin: 10px 0 0; color: var(--muted); line-height: 1.7; }
+    .step-card { height: 100%; cursor: pointer; text-align: left; }
+    .step-card.is-selected {
+      border-color: var(--primary);
+      box-shadow: 0 12px 28px rgba(52, 120, 246, 0.16);
+    }
+    .step-showcase {
+      margin-top: 18px;
+      border-radius: 32px;
+      background: var(--primary-light);
+      padding: 16px;
+    }
+    .step-panel {
+      border-radius: 24px;
+      background: #fff;
+      padding: 22px 24px;
+      box-shadow: 0 10px 30px rgba(52, 120, 246, 0.08);
+    }
+    .step-panel-head {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .step-panel-text { min-width: 0; flex: 1; }
+    .step-panel h3 { margin: 0; font-size: 24px; letter-spacing: -0.03em; }
+    .step-panel p { margin: 10px 0 0; color: #3d4d6b; line-height: 1.75; white-space: pre-line; }
+    .step-panel .step-cta-hint {
+      margin: 8px 0 0;
+      color: #e03131;
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+    .step-cta-hint[hidden] { display: none; }
+    .step-stage {
+      position: relative;
+      display: grid;
+      place-items: center;
+      margin-top: 14px;
+      overflow: hidden;
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 16px 40px rgba(32, 38, 56, 0.08);
+      aspect-ratio: 16 / 9;
+    }
+    .shot-frame {
+      position: relative;
+      line-height: 0;
+    }
+    .step-stage img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      background: #fff;
+    }
+    .field-hint {
+      position: absolute;
+      left: 13%;
+      width: 76%;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      color: #202638;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      font-size: clamp(11px, 2.05cqh, 16px);
+      pointer-events: none;
+    }
+    .field-hint[hidden] { display: none; }
+    .field-id { top: 37.72%; height: 10.49%; }
+    .field-pw { top: 64.45%; height: 10.36%; }
+    .shot-frame { container-type: size; }
+    .shot-nav {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      width: 44px;
+      height: 44px;
+      transform: translateY(-50%);
+      border: 0;
+      border-radius: 50%;
+      background: rgba(228, 231, 236, 0.95);
+      color: #5c6b82;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(32, 38, 56, 0.12);
+    }
+    .shot-prev { left: 12px; }
+    .shot-next { right: 12px; }
+    .shot-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .shot-dots button {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      border: 0;
+      border-radius: 999px;
+      background: #c9d0dc;
+      cursor: pointer;
+    }
+    .shot-dots button[aria-current="true"] {
+      width: 28px;
+      background: var(--accent-orange);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .feature { grid-column: span 2; }
+    .feature:nth-child(4),
+    .feature:nth-child(5) { grid-column: span 3; }
+    .feature h3 { margin: 14px 0 0; font-size: 20px; }
+    .feature p { margin: 8px 0 0; color: var(--muted); line-height: 1.65; font-size: 15px; }
+    .icon-bubble {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+    .feature:nth-child(2) .icon-bubble { background: #fff4d6; color: #b45309; }
+    .feature:nth-child(3) .icon-bubble { background: #e7fbf3; color: #047857; }
+    .feature:nth-child(4) .icon-bubble { background: #f3e8ff; color: #7e22ce; }
+    .feature:nth-child(5) .icon-bubble { background: #ffe8dc; color: #c2410c; }
+
+    .board-form, .qa {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 22px 24px;
+    }
+    .board-form { margin-top: 28px; }
+    .board-form label, .admin-reply label {
+      display: block;
+      margin-top: 14px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .board-form label span, .hint { color: var(--muted); font-weight: 600; }
+    .board-form textarea, .board-form input, .admin-reply textarea, .admin-bar input {
+      width: 100%;
+      margin-top: 8px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 14px;
+      background: var(--soft);
+      color: var(--ink);
+      resize: vertical;
+    }
+    .board-form input[type="checkbox"] { width: auto; margin: 0; }
+    .board-form .privacy {
+      margin-top: 16px;
+      background: #fff;
+      border: 1px solid #e4e7ee;
+      border-radius: 12px;
+      padding: 0 16px;
+    }
+    .board-form .privacy summary {
+      padding: 14px 0;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .board-form .privacy summary::after {
+      width: 0;
+      height: 0;
+      border: 5px solid transparent;
+      border-top: 6px solid #667085;
+      border-bottom: 0;
+      transform: none;
+      margin-top: 2px;
+    }
+    .board-form .privacy[open] summary::after {
+      border-top: 0;
+      border-bottom: 6px solid #667085;
+      transform: none;
+      margin-top: -4px;
+    }
+    .board-form .privacy .privacy-body {
+      padding: 14px 2px 16px;
+      border-top: 1px solid #eef0f4;
+    }
+    .board-form .privacy p {
+      margin: 0 0 12px;
+      color: #3d4454;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+    .board-form .privacy .privacy-mark {
+      margin-bottom: 10px;
+      color: var(--ink);
+      font-weight: 800;
+    }
+    .board-form .privacy p:last-child { margin-bottom: 0; }
+    .board-form label.consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 12px;
+      padding: 14px 16px;
+      border: 1px solid #f3ddb0;
+      border-radius: 12px;
+      background: #fff6e4;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .board-form label.consent input {
+      width: 18px;
+      height: 18px;
+      margin: 2px 0 0;
+      flex: none;
+    }
+    .board-notice {
+      margin: 0;
+      color: #8c3a2f;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.65;
+    }
+    .account-fields {
+      margin: 4px 0 0;
+      padding: 0;
+      border: 0;
+    }
+    .account-fields:disabled { opacity: 0.55; }
+    .board-form textarea { min-height: 120px; }
+    .board-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 14px; }
+    .form-note { margin: 0; color: var(--primary-dark); font-size: 14px; font-weight: 700; }
+    .board-list { display: grid; gap: 14px; margin-top: 18px; }
+    .board-pages {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .board-pages[hidden] { display: none; }
+    .board-pages button {
+      min-width: 40px;
+      height: 40px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--ink);
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .board-pages button[aria-current="page"] {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+    .board-pages button:disabled { opacity: 0.4; cursor: default; }
+    .qa-row { display: grid; grid-template-columns: 64px 1fr; gap: 12px; align-items: start; }
+    .qa-row + .qa-row { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .qa-mark {
+      display: inline-flex;
+      justify-content: center;
+      padding: 6px 0;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .qa-answer .qa-mark { background: #e7fbf3; color: #047857; }
+    .qa-wait .qa-mark { background: #fff4d6; color: #b45309; }
+    .qa p { margin: 0; line-height: 1.7; white-space: pre-line; }
+    .qa time, .qa-private { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; }
+    .board-empty, .board-error {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: #fff;
+      color: var(--muted);
+    }
+    .board-error { color: #e03131; }
+    .admin-toggle {
+      margin-top: 18px;
+      background: none;
+      border: 0;
+      color: var(--muted);
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .admin-bar { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+    .admin-bar[hidden] { display: none; }
+    .admin-bar input { margin-top: 0; }
+    .admin-reply { margin-top: 12px; }
+    .admin-reply textarea { min-height: 80px; }
+
+    .faq { max-width: 760px; margin: 28px auto 0; display: grid; gap: 10px; text-align: left; }
+    details {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 6px 20px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      padding: 16px 0;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+      transform: rotate(45deg);
+      flex: none;
+      margin-top: -4px;
+    }
+    details[open] summary::after { transform: rotate(225deg); margin-top: 4px; }
+    details p { margin: 0 0 16px; color: var(--muted); line-height: 1.7; }
+    .center { text-align: center; }
+    .center .section-lead { margin-left: auto; margin-right: auto; }
+
+    .site-footer { background: var(--ink); color: #fff; padding: 48px 0 28px; }
+    .footer-row { display: flex; justify-content: space-between; gap: 24px; align-items: flex-end; }
+    .site-footer a { color: #fff; font-weight: 700; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 8px 18px; color: rgba(255,255,255,0.82); font-size: 14px; }
+    .footer-links a { text-decoration: none; font-weight: 600; }
+    .copy { margin: 22px 0 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.55); font-size: 12px; }
+    .footer-brand { filter: brightness(0) invert(1); width: 150px; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .rounds, .steps, .qa-row { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr; }
+      .feature, .feature:nth-child(4), .feature:nth-child(5) { grid-column: auto; }
+      .prize { flex-direction: column; align-items: flex-start; border-radius: 28px; padding: 20px; }
+      .prize-visual { width: min(240px, 78%); align-self: flex-end; }
+      .prize .btn { width: 100%; }
+      .brand-banner { padding: 18px 18px 14px; }
+      .aidt-tag { left: 12px; font-size: 13px; }
+      .brand-banner-title { font-size: 1.95rem; }
+      .brand-tag { display: inline-flex; }
+      .site-header .wrap { align-items: flex-start; padding: 12px 0; }
+      .nav a { padding: 6px 8px; font-size: 13px; }
+      .scene { max-width: 420px; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(1200px, calc(100% - 32px)); }
+      section { padding: 64px 0; }
+      .brand img { width: 124px; }
+      .callout { border-radius: 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .float,
+      .step-link,
+      .step-link::after,
+      .spark,
+      .status-dot { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="https://aidt.i-scream.co.kr/" target="_blank" rel="noopener noreferrer">
+        <img src="https://i-screammedia-aidt-free-trial-event.vercel.app/brand/i-scream-media.png?v=3" alt="i-Scream media" />
+        <span class="brand-tag">사용 안내</span>
+      </a>
+      <nav class="nav" aria-label="사용 안내 메뉴">
+        <a href="#round2">2차 배정</a>
+        <a href="#schedule">이용 일정</a>
+        <a href="#howto">사용 방법</a>
+        <a href="#features">수업 기능</a>
+        <a href="#contact">문의</a>
+        <a class="ghost" href="https://i-screammedia-aidt-free-trial-event.vercel.app/" target="_blank" rel="noopener noreferrer">이벤트 페이지</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="blob blob-a"></div>
+      <div class="blob blob-b"></div>
+      <div class="blob blob-c"></div>
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <h1>
+              <span class="lead">선생님은 아이스크림 계정으로,<br />학생은 QR코드로 간편하게 사용해보세요!</span>
+              <span class="brand-banner">
+                <span class="aidt-tag">구) AIDT</span>
+                <span class="brand-banner-title">AI 디지털 교육자료(수학)</span>
+              </span>
+              <span class="guide-label">무료 체험 사용 안내 페이지 입니다.</span>
+            </h1>
+            <p class="hero-copy">
+              신청해 주신 선생님을 위한 안내입니다.<br />
+              자세한 이용 방법 및 이벤트 관련 안내는<br />
+              이벤트 신청시 등록하신 메일 주소로 보내드립니다.<br />
+              선생님은 통합계정으로, 학생들은 QR코드로 수업에 들어옵니다.
+            </p>
+            <ul class="chips">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 3v4M16 3v4M4 10h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                1차 이용 11.23–12.06
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 3v4M16 3v4M4 10h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                2차 이용 11.30–12.13
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="9" r="2.4" stroke="currentColor" stroke-width="2"/><path d="M3.5 19c.6-2.8 2.8-4 5.5-4s4.9 1.2 5.5 4M14 15.2c1.4-.4 2.8-.2 4.2.8.9.7 1.6 1.7 1.9 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                학생 최대 30명
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm12 2h2m-2 4h4v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                간편한 QR 입장
+              </li>
+            </ul>
+            <div class="status" id="today-status" aria-live="polite">
+              <span class="status-dot"></span>
+              <div>
+                <strong>11월 11일 00시 이후 신청은 2차 체험단입니다.</strong>
+                <p>1차 모집이 조기 마감되어 자동 배정됩니다. 2차 체험 기간은 11월 30일부터 12월 13일까지(2주간) 이고, 상세 가이드는 본 이벤트 운영 페이지 & 메일로 안내됩니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="scene" aria-hidden="true">
+            <div class="float f1"><img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/graph.png?v=3" alt="" /></div>
+            <div class="float f2"><img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/network.png?v=3" alt="" /></div>
+            <div class="float f3"><img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/ops.png?v=3" alt="" /></div>
+            <div class="float f4"><img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/triangle.png?v=3" alt="" /></div>
+            <div class="float f5"><img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/cube.png?v=3" alt="" /></div>
+            <div class="float f6"><img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/cylinder.png?v=3" alt="" /></div>
+            <div class="float f7"><img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/cubes.png?v=3" alt="" /></div>
+            <img class="people" src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/people.png?v=3" alt="" />
+          </div>
+        </div>
+
+        <aside class="prize">
+          <div class="prize-copy">
+            <p class="prize-title">이벤트에 참여 완료한 선생님 50분께<br />추첨을 통해 <span>네이버페이 포인트 10,000원</span>을 드려요!</p>
+            <p class="prize-note">( 실제 로그인 하시고, 체험한 대상자 중, 추첨하여 지급합니다. )</p>
+          </div>
+          <img class="prize-visual" src="네이버페이.png" alt="네이버페이 포인트 10,000" />
+        </aside>
+      </div>
+    </section>
+
+    <section class="notice" id="round2">
+      <div class="wrap">
+        <article class="notice-card">
+          <p class="notice-badge">중요 안내</p>
+          <h2>2차 체험단 배정 및 일정 안내</h2>
+          <p class="notice-lead">
+            안녕하세요, 선생님.<br />
+            AI 디지털 교육자료(수학) 무료체험에 뜨거운 관심과 성원을 보내주셔서 진심으로 감사드립니다.
+          </p>
+          <p class="notice-lead">
+            기존 안내해 드린 1차 체험단(11/23 ~ 2주간) 모집 인원이 조기 마감됨에 따라,
+            <strong>11월 11일(수) 00시 이후 신청해 주신 선생님께서는 2차 체험단으로 자동 배정</strong>되셨습니다.
+            상세한 2차 체험단 진행 일정을 아래와 같이 안내해 드리오니 확인 부탁드립니다.
+          </p>
+          <ul class="notice-points">
+            <li><span>배정 회차</span>2차 체험단 (11월 11일(수) 00시 이후 신청자)</li>
+            <li><span>체험 기간</span>2026년 11월 30일(월) ~ 12월 13일(일) (2주간)</li>
+            <li><span>향후 안내</span>체험 시작 전 상세 가이드 (본 페이지 & 메일 발송)를 추가로 전달 드릴 예정입니다.</li>
+          </ul>
+          <p class="notice-foot">
+            일정 변동으로 인해 기다려주시는 만큼 더욱 만족스러운 체험이 되실 수 있도록 꼼꼼히 준비하겠습니다.<br />
+            궁금하신 점이나 일정 조율이 필요하시면 신청 안내 메일로 회신하시거나, <a href="#contact">문의 안내</a>를 확인해 주세요.
+            감사합니다.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="schedule">
+      <div class="wrap">
+        <p class="eyebrow">이용 일정</p>
+        <h2>아래 1차, 2차 일정을 꼭! 확인해주세요.</h2>
+        <p class="section-lead">신청한다고 바로 열리지는 않습니다. 회차 발급일에 계정이 준비되고, 이용 기간이 시작된 뒤 수업에 사용할 수 있습니다.</p>
+        <div class="rounds">
+          <article class="card">
+            <p class="round-label">1차</p>
+            <h3>11월 23일부터 12월 6일</h3>
+            <p class="meta">11월 11일(수) 00시 이전 신청한 학급</p>
+            <ul class="timeline">
+              <li><b>신청</b><span>2026.11.09.(월) – 11.10.(화)</span></li>
+              <li><b>안내</b><span>체험 시작 전 상세 가이드 (본 페이지 & 메일 발송)</span></li>
+              <li><b>이용</b><span>2026.11.23.(월) – 12.06.(일)</span></li>
+            </ul>
+          </article>
+          <article class="card round-2">
+            <p class="round-label round-2">2차</p>
+            <h3>11월 30일부터 12월 13일</h3>
+            <p class="meta">11월 11일(수) 00시 이후 신청한 학급</p>
+            <ul class="timeline">
+              <li><b>신청</b><span>2026.11.11.(수) 00시 이후</span></li>
+              <li><b>안내</b><span>체험 시작 전 상세 가이드 (본 페이지 & 메일 발송)</span></li>
+              <li><b>이용</b><span>2026.11.30.(월) – 12.13.(일)</span></li>
+            </ul>
+          </article>
+        </div>
+        <p class="callout">이용기간 연장이 필요하신 경우에는 개별 연락주시면 최대 2주 더 연장이 가능합니다.</p>
+        <ul class="notes">
+          <li class="note-strong">1차 체험단은 조기 마감되었습니다. 11월 11일(수) 00시 이후 신청은 2차 체험단으로 배정됩니다.</li>
+          <li>전체 신청 기간은 2026년 11월 9일부터 11월 22일까지입니다.</li>
+          <li>자세한 이용 방법 및 이벤트 관련 안내는<br />이벤트 신청시 등록하신 메일 주소로 보내드립니다.</li>
+          <li>신청 정보 및 교원인증 확인 결과에 따라 발급이 제한될 수 있습니다.</li>
+          <li>동일 학교·학년·반에는 1개의 체험 계정만 발급됩니다. 실제 담당 학급 정보를 기준으로 확인해 주세요.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="soft" id="howto">
+      <div class="wrap">
+        <p class="eyebrow">사용 방법</p>
+        <h2>선생님은 계정으로, 학생은 QR로.</h2>
+        <p class="section-lead">학생은 별도의 아이스크림 통합회원 ID와 비밀번호가 필요하지 않습니다.<br />신청하신 학생 수만큼 QR이 선생님 로그인 시 발급됩니다.</p>
+        <div class="steps" role="tablist" aria-label="사용 방법">
+          <article class="card step-card step is-selected" role="tab" tabindex="0" aria-selected="true" data-copy="300 학급에게만 특별히 열어드리는 '사전 체험 전용 독립 서버(Stage)'입니다.&#10;본 서버에서 빠르고 쾌적하게 AIDT 신기능을 마음껏 테스트해 보세요!" data-images="홈화면01.png|홈화면02.png" data-alts="AI 디지털 교육자료 홈 화면 1|AI 디지털 교육자료 홈 화면 2">
+            <span class="step-no">01</span>
+            <h3>AI 디지털 교육자료 접속</h3>
+          </article>
+          <article class="card step-card step" role="tab" tabindex="0" aria-selected="false" data-copy="선생님은 아이스크림 통합계정으로 로그인합니다.&#10;무료체험은 통합계정당 1회, 실제 담당 학급 1개만 이용할 수 있습니다." data-images="login.png" data-alts="선생님 아이스크림 통합계정 로그인 화면" data-login-hint="true">
+            <span class="step-no">02</span>
+            <h3>선생님 로그인</h3>
+          </article>
+          <article class="card step-card step" role="tab" tabindex="0" aria-selected="false" data-copy="이용 기간에 로그인하면 신청하신 학생 수에 맞게 학생 QR이 발급됩니다. 한 학급당 최대 30명입니다." data-images="QR발급01.png|QR발급_확대.png" data-alts="학생별 자동 로그인 QR 발급 안내|학생 QR 카드와 확대 화면">
+            <span class="step-no">03</span>
+            <h3>학생 QR 확인</h3>
+          </article>
+          <article class="card step-card step" role="tab" tabindex="0" aria-selected="false" data-copy="학생은 QR코드를 스캔해 들어옵니다. 아이디와 비밀번호를 따로 만들지 않아도 우리 반 수업에 참여할 수 있습니다." data-images="학생 QR 입장.png|학생 QR 입장01.png" data-alts="학생이 QR을 스캔해 입장하는 샘플 화면|선생님이 QR 카드를 나누어 주는 샘플 화면">
+            <span class="step-no">04</span>
+            <h3>학생은 QR 입장</h3>
+          </article>
+        </div>
+        <div class="step-showcase">
+          <div class="step-panel" id="step-panel" role="tabpanel">
+            <div class="step-panel-head">
+              <div class="step-panel-text">
+                <h3 id="step-panel-title">AI 디지털 교육자료 접속</h3>
+                <p id="step-panel-copy">300 학급에게만 특별히 열어드리는 '사전 체험 전용 독립 서버(Stage)'입니다.<br />본 서버에서 빠르고 쾌적하게 AIDT 신기능을 마음껏 테스트해 보세요!</p>
+                <p class="step-cta-hint" id="step-cta-hint">우측 바로 체험하기 버튼을 클릭하세요</p>
+                <p class="step-cta-hint" id="step-login-hint" hidden>선생님의 아이스크림 통합 계정을 사용하세요.</p>
+                <p class="step-cta-hint" id="step-qr-hint" hidden>QR 코드를 인쇄해 학생들에게 나누어 주세요.</p>
+              </div>
+              <a class="step-link" id="step-server-link" href="https://stage-math.smart-aidt.com" target="_blank" rel="noopener noreferrer"><span class="step-link-label">바로 체험하기</span><span class="spark spark-a" aria-hidden="true"></span><span class="spark spark-b" aria-hidden="true"></span></a>
+            </div>
+          </div>
+          <div class="step-stage">
+            <div class="shot-frame" id="shot-frame">
+              <img id="step-shot" src="홈화면01.png" alt="AI 디지털 교육자료 홈 화면 1" />
+              <p class="field-hint field-id" id="field-id" hidden>선생님의 아이스크림 통합 계정 아이디를 입력하세요</p>
+              <p class="field-hint field-pw" id="field-pw" hidden>선생님의 아이스크림 통합 계정 비밀번호를 입력하세요</p>
+            </div>
+            <button class="shot-nav shot-prev" type="button" aria-label="이전 이미지">‹</button>
+            <button class="shot-nav shot-next" type="button" aria-label="다음 이미지">›</button>
+          </div>
+          <div class="shot-dots" id="shot-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <p class="eyebrow">수업에서 열어보기</p>
+        <h2>체험 기간에 먼저 써볼 기능입니다.</h2>
+        <p class="section-lead">새로워진 AI 디지털 교육자료를 우리 반 학생들과 직접 경험해 보세요.</p>
+        <div class="features">
+          <article class="card feature">
+            <div class="icon-bubble" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>교과서/수학익힘</h3>
+            <p>아이스크림 수학교과서와 진도에 맞춘 수학익힘을 수업 중 바로 열고, 학생 답안과 필기를 확인할 수 있습니다.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon-bubble" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19V9M12 19V5M19 19v-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>평가 2세트</h3>
+            <p>형성·단원평가를 2세트씩 제공합니다. 다시 풀어야 할 때 사용하고, 학급과 학생별 성취를 대시보드에서 볼 수 있습니다.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon-bubble" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="16" r="3" stroke="currentColor" stroke-width="2"/><path d="M11 8h6M8 11v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>수업 도구</h3>
+            <p>모둠 구성, 발표자 뽑기, 자리 바꾸기, 룰렛처럼 수업 흐름을 돕는 도구를 수업 안에서 바로 쓸 수 있습니다.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon-bubble" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="currentColor" stroke-width="2"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3>AI 수학교구</h3>
+            <p>21종의 디지털 교구로 분수, 시계, 입체도형처럼 추상적인 개념을 학생이 직접 조작하며 볼 수 있습니다.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon-bubble" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="10" rx="3" stroke="currentColor" stroke-width="2"/><path d="M8 8V6a4 4 0 018 0v2" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3>수학 게임</h3>
+            <p>혼자 하기와 같이 하기, 팀전과 개인전으로 참여할 수 있습니다. 우리 반 랭킹도 함께 확인할 수 있습니다.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="contact">
+      <div class="wrap">
+        <p class="eyebrow">관련 문의</p>
+        <h2>일반 문의는 아래에서 함께 확인합니다.</h2>
+        <p class="section-lead">동의 없이 남긴 문의와 답변은 이 페이지에서 모든 선생님이 함께 봅니다. 개인정보 수집에 동의한 계정 조치 문의는 게시판에 올리지 않고 운영팀만 확인합니다.</p>
+        <form class="board-form" id="board-form">
+          <p class="board-notice">단순한 이용 문의는 동의 없이 작성할 수 있습니다. 다만 발급된 계정에 대한 정확한 조치는 개인정보를 남기지 않으면 어려울 수 있습니다.</p>
+          <label for="board-question">문의 내용 <span id="question-visibility">게시판에 공개됩니다</span>
+            <textarea id="board-question" name="question" maxlength="2000" required placeholder="궁금한 점을 적어 주세요."></textarea>
+          </label>
+          <details class="privacy">
+            <summary>개인정보 수집·이용 안내 전문 보기</summary>
+            <div class="privacy-body">
+              <p class="privacy-mark">※ 개인정보 수집·이용 안내</p>
+              <p>아이스크림 AI 디지털 교육자료 무료 체험 기간 중 문의 사항에 대해 조치를 취하기 위해 개인정보(소속 교육청, 학교명, 이름, 연락처)를 수집·이용합니다.</p>
+              <p>이벤트 참여 확인, 당첨자 선정 및 경품 발송을 위해 개인정보(소속 교육청, 학교명, 이름, 연락처)를 수집·이용합니다.</p>
+              <p>수집된 개인정보는 이벤트 운영, 본인 확인, 중복 참여 방지, 당첨 안내 및 경품 발송 목적으로만 이용되며 개인정보는 이벤트 종료 및 경품 발송 목적 달성 시 즉시 파기합니다.</p>
+              <p class="privacy-mark">[개인정보 제3자 제공 안내]</p>
+              <p>제공받는 자 : 다우기술<br>제공 항목 : 이름, 연락처<br>제공 목적 : 경품 발송<br>보유 및 이용 기간 : 경품 발송 완료 시까지</p>
+              <p class="privacy-mark">※ 개인정보 수집·이용 및 제3자 제공에 동의를 거부할 권리가 있으나 동의하지 않을 경우 이벤트 참여 및 경품 제공이 제한될 수 있습니다</p>
+            </div>
+          </details>
+          <label class="consent" for="board-agree">
+            <input id="board-agree" name="agree" type="checkbox" />
+            단순 문의 외에 발급된 계정에 대한 추가 조치가 필요한 경우는 왼쪽 체크 박스 클릭 후, 아래 내용을 작성해주세요.
+          </label>
+          <fieldset class="account-fields" id="account-fields" disabled>
+            <label for="board-office">소속 교육청
+              <input id="board-office" name="office" maxlength="40" placeholder="예: 서울" />
+            </label>
+            <label for="board-school">소속 학교
+              <input id="board-school" name="school" maxlength="80" placeholder="소속 학교" />
+            </label>
+            <label for="board-account">아이스크림 S 계정 <span>운영팀만 확인합니다</span>
+              <input id="board-account" name="sAccount" maxlength="80" placeholder="아이스크림 S 계정" />
+            </label>
+            <label for="board-name">이름 <span>실명. 이 페이지에는 표시되지 않습니다</span>
+              <input id="board-name" name="name" maxlength="30" placeholder="이름" />
+            </label>
+            <label for="board-phone">연락처 <span>000-0000-0000, 상품 발송 및 경품 수령을 위한 용도로만 사용됩니다</span>
+              <input id="board-phone" name="phone" maxlength="20" inputmode="tel" placeholder="000-0000-0000" />
+            </label>
+            <label for="board-private">비공개 연락처 <span>선택. 운영팀만 확인합니다</span>
+              <input id="board-private" name="privateNote" maxlength="500" placeholder="학교, 메일, 전화번호. 운영팀만 확인합니다." />
+            </label>
+          </fieldset>
+          <div class="board-actions">
+            <button class="btn" type="submit">문의 남기기</button>
+            <p class="form-note" id="board-note" role="status"></p>
+          </div>
+        </form>
+        <p class="board-error" id="board-error" hidden></p>
+        <div class="board-list" id="board-list" aria-live="polite"></div>
+        <nav class="board-pages" id="board-pages" aria-label="문의 페이지" hidden></nav>
+        <button class="admin-toggle" type="button" id="admin-toggle">운영팀 답변 작성</button>
+        <form class="admin-bar" id="admin-bar" hidden>
+          <input id="admin-password" type="password" autocomplete="current-password" placeholder="답변 비밀번호" />
+          <button class="btn light" type="submit">확인</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap center">
+        <h2>궁금한 점이 있으신가요?</h2>
+        <div class="faq">
+          <details open>
+            <summary>신청하면 바로 사용할 수 있나요?</summary>
+            <p>아니요. 1차 이용은 11월 23일부터 12월 6일까지, 2차 이용은 11월 30일부터 12월 13일까지입니다.</p>
+          </details>
+          <details>
+            <summary>학생도 아이스크림 계정이 필요한가요?</summary>
+            <p>아니요. 학생은 별도의 아이스크림 통합회원 ID와 비밀번호 없이 QR코드를 통해 입장할 수 있습니다.</p>
+          </details>
+          <details>
+            <summary>학생은 몇 명까지 이용할 수 있나요?</summary>
+            <p>한 학급당 최대 30명까지 신청할 수 있습니다. QR은 신청하신 학생 수에 맞게 선생님 로그인 시 발급됩니다.</p>
+          </details>
+          <details>
+            <summary>한 명의 선생님이 여러 학급을 신청할 수 있나요?</summary>
+            <p>아니요. 무료체험은 아이스크림 통합계정당 1회만 신청할 수 있습니다. 같은 학교·학년·반에도 체험 계정은 1개만 발급됩니다.</p>
+          </details>
+          <details>
+            <summary>학교나 학급 정보를 잘못 입력하면 어떻게 되나요?</summary>
+            <p>실제 담당 학급 정보와 일치하지 않으면 계정 발급이 제한될 수 있습니다. 잘못된 학급 정보로 신청하면 해당 학급 선생님의 이용이 제한될 수 있으니, 안내 메일로 실제 담당 학급을 알려 주세요.</p>
+          </details>
+          <details>
+            <summary>네이버페이 포인트는 누구나 받을 수 있나요?</summary>
+            <p>이벤트에 참여 완료한 선생님 50분께 추첨을 통해 네이버페이 포인트 10,000원을 드립니다. 실제 로그인하시고, 체험한 대상자 중에서 추첨하여 지급합니다.</p>
+          </details>
+          <details>
+            <summary>1, 2학년 학급도 이 안내대로 쓰면 되나요?</summary>
+            <p>이 무료체험은 초등학교 3~6학년 선생님을 대상으로 합니다. 1, 2학년 선생님은 <a href="https://aidt.i-scream.co.kr/" target="_blank" rel="noopener noreferrer">아이스크림 AI 디지털 교육자료 홈페이지</a>에서 체험해 보시거나, 아래 문의에 남겨 주세요.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <div>
+          <a href="https://aidt.i-scream.co.kr/" target="_blank" rel="noopener noreferrer"><img class="footer-brand" src="https://i-screammedia-aidt-free-trial-event.vercel.app/brand/i-scream-media.png?v=3" alt="i-Scream media" /></a>
+          <p style="margin:14px 0 0;"><a href="https://aidt.i-scream.co.kr/" target="_blank" rel="noopener noreferrer">아이스크림 AI 디지털 교육자료 홈페이지 바로 가기</a></p>
+        </div>
+        <nav class="footer-links" aria-label="하단 메뉴">
+          <a href="#round2">2차 배정</a>
+          <a href="#schedule">이용 일정</a>
+          <a href="#howto">사용 방법</a>
+          <a href="#features">수업 기능</a>
+          <a href="#contact">문의</a>
+          <a href="https://i-screammedia-aidt-free-trial-event.vercel.app/" target="_blank" rel="noopener noreferrer">이벤트 페이지</a>
+        </nav>
+      </div>
+      <p class="copy">ⓒ i-Scream Media Corporation. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var rounds = [
+        { id: "1차", applyStart: "2026-11-09", applyEnd: "2026-11-10", issue: "2026-11-16", useStart: "2026-11-23", useEnd: "2026-12-06" },
+        { id: "2차", applyStart: "2026-11-11", applyEnd: "2026-11-22", issue: "2026-11-23", useStart: "2026-11-30", useEnd: "2026-12-13" }
+      ];
+
+      function kstToday() {
+        var parts = new Intl.DateTimeFormat("en-CA", {
+          timeZone: "Asia/Seoul",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit"
+        }).formatToParts(new Date());
+        var get = function (type) { return parts.filter(function (p) { return p.type === type; })[0].value; };
+        return get("year") + "-" + get("month") + "-" + get("day");
+      }
+
+      function label(iso) {
+        var bits = iso.split("-");
+        return Number(bits[1]) + "월 " + Number(bits[2]) + "일";
+      }
+
+      var today = kstToday();
+      var title = "11월 11일 00시 이후 신청은 2차 체험단입니다.";
+      var body = "1차 모집이 조기 마감되어 자동 배정됩니다. 2차 체험 기간은 11월 30일부터 12월 13일까지(2주간) 이고, 상세 가이드는 본 이벤트 운영 페이지 & 메일로 안내됩니다.";
+
+      if (today < rounds[0].applyStart) {
+        title = "무료체험 신청이 곧 시작됩니다.";
+        body = "신청은 " + label(rounds[0].applyStart) + "부터입니다. 자세한 이용 방법 및 이벤트 관련 안내는 이벤트 신청시 등록하신 메일 주소로 보내드립니다.";
+      } else if (today <= rounds[0].applyEnd) {
+        title = "지금은 1차 신청 기간입니다.";
+        body = "1차 계정 발급일은 " + label(rounds[0].issue) + "이고, 수업에서 쓰는 기간은 " + label(rounds[0].useStart) + "부터입니다.";
+      } else if (today <= rounds[1].applyEnd) {
+        title = "11월 11일 00시 이후 신청은 2차 체험단입니다.";
+        body = "1차 모집이 조기 마감되어 자동 배정됩니다. 2차 체험 기간은 11월 30일부터 12월 13일까지(2주간) 이고, 상세 가이드는 본 이벤트 운영 페이지 & 메일로 안내됩니다.";
+      } else if (today < rounds[1].useStart) {
+        title = "1차 이용이 시작되었습니다.";
+        body = "1차 학급은 11월 23일부터 12월 6일까지 사용할 수 있습니다. 2차 상세 가이드는 11월 27일경 메일로 안내되고, 2차 이용은 " + label(rounds[1].useStart) + "에 시작됩니다.";
+      } else if (today <= rounds[0].useEnd) {
+        title = "1차와 2차 이용이 함께 진행 중입니다.";
+        body = "1차는 12월 6일까지, 2차는 12월 13일까지 사용할 수 있습니다.";
+      } else if (today <= rounds[1].useEnd) {
+        title = "지금은 2차 이용 기간입니다.";
+        body = "2차 학급은 12월 13일까지 사용할 수 있습니다. 1차 이용은 12월 6일에 끝났습니다.";
+      } else {
+        title = "안내된 이용 기간이 끝났습니다.";
+        body = "연장이 필요하면 개별 연락으로 최대 2주까지 요청할 수 있습니다.";
+      }
+
+      var status = document.getElementById("today-status");
+      status.querySelector("strong").textContent = title;
+      status.querySelector("p").textContent = body;
+    })();
+
+    (function () {
+      var form = document.getElementById("board-form");
+      var note = document.getElementById("board-note");
+      var list = document.getElementById("board-list");
+      var error = document.getElementById("board-error");
+      var adminToggle = document.getElementById("admin-toggle");
+      var adminBar = document.getElementById("admin-bar");
+      var visibility = document.getElementById("question-visibility");
+      var endpoint = "https://docs.google.com/forms/d/e/1FAIpQLSdEWsLKxfxrWHTiEz6OHkK_KbY3RAMnVdDTn_3SZEiRmNnRIA/formResponse";
+      var boardUrl = "https://script.google.com/macros/s/AKfycbzB9KVsUWC2oTBZ_7abbbpiZ_PsjnrZwkWx5Hy6TJpzj_1GT47lYVJuc51vCB_xBjlO/exec";
+      var accountFields = ["board-office", "board-school", "board-account", "board-name", "board-phone"];
+      var posts = [];
+      var adminPassword = "";
+      var lastJson = "";
+      var page = 0;
+      var pageSize = 10;
+      var pager = document.getElementById("board-pages");
+
+      function fieldValue(id) {
+        return document.getElementById(id).value.trim();
+      }
+
+      function setAccountMode(on) {
+        var box = document.getElementById("account-fields");
+        box.disabled = !on;
+        accountFields.forEach(function (id) {
+          document.getElementById(id).required = on;
+        });
+        visibility.textContent = on
+          ? "운영팀만 확인합니다. 게시판에는 보이지 않습니다"
+          : "게시판에 공개됩니다";
+      }
+
+      function when(iso) {
+        var date = new Date(iso);
+        if (!iso || isNaN(date.getTime())) return "";
+        return date.toLocaleString("ko-KR", { timeZone: "Asia/Seoul", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" });
+      }
+
+      function showError(message) {
+        error.hidden = !message;
+        error.textContent = message || "";
+      }
+
+      function row(mark, text, extra, kind) {
+        var wrap = document.createElement("div");
+        wrap.className = "qa-row" + (kind ? " " + kind : "");
+        var badge = document.createElement("span");
+        badge.className = "qa-mark";
+        badge.textContent = mark;
+        var body = document.createElement("div");
+        var paragraph = document.createElement("p");
+        paragraph.textContent = text;
+        body.appendChild(paragraph);
+        if (extra) body.appendChild(extra);
+        wrap.appendChild(badge);
+        wrap.appendChild(body);
+        return wrap;
+      }
+
+      function pageCount() {
+        return Math.max(1, Math.ceil(posts.length / pageSize));
+      }
+
+      function drawPager() {
+        pager.innerHTML = "";
+        pager.hidden = posts.length <= pageSize;
+        if (pager.hidden) return;
+        var total = pageCount();
+        var start = Math.max(0, Math.min(page - 2, total - 5));
+        var end = Math.min(total - 1, start + 4);
+        function addButton(label, index, current) {
+          var button = document.createElement("button");
+          button.type = "button";
+          button.textContent = label;
+          if (current) button.setAttribute("aria-current", "page");
+          if (index < 0 || index >= total) button.disabled = true;
+          else button.addEventListener("click", function () {
+            page = index;
+            draw();
+          });
+          pager.appendChild(button);
+        }
+        addButton("이전", page - 1, false);
+        for (var index = start; index <= end; index += 1) addButton(String(index + 1), index, index === page);
+        addButton("다음", page + 1, false);
+      }
+
+      function draw() {
+        if (page > pageCount() - 1) page = pageCount() - 1;
+        if (page < 0) page = 0;
+        list.innerHTML = "";
+        if (!posts.length) {
+          var empty = document.createElement("p");
+          empty.className = "board-empty";
+          empty.textContent = "아직 남겨진 일반 문의가 없습니다.";
+          list.appendChild(empty);
+          drawPager();
+          return;
+        }
+        posts.slice(page * pageSize, page * pageSize + pageSize).forEach(function (post) {
+          var card = document.createElement("article");
+          card.className = "qa";
+          var time = document.createElement("time");
+          time.dateTime = post.createdAt || "";
+          time.textContent = when(post.createdAt);
+          card.appendChild(row("문의", post.question, time, ""));
+          if (post.answer) {
+            var answered = document.createElement("time");
+            answered.dateTime = post.answeredAt || "";
+            answered.textContent = when(post.answeredAt);
+            card.appendChild(row("답변", post.answer, answered, "qa-answer"));
+          } else {
+            card.appendChild(row("답변", "답변 준비 중입니다.", null, "qa-wait"));
+          }
+          if (adminPassword) {
+            var reply = document.createElement("form");
+            reply.className = "admin-reply";
+            var label = document.createElement("label");
+            label.textContent = "답변";
+            var area = document.createElement("textarea");
+            area.maxLength = 2000;
+            area.required = true;
+            area.value = post.answer || "";
+            label.appendChild(area);
+            var save = document.createElement("button");
+            save.className = "btn";
+            save.type = "submit";
+            save.textContent = "답변 등록";
+            save.style.marginTop = "10px";
+            reply.appendChild(label);
+            reply.appendChild(save);
+            reply.addEventListener("submit", function (event) {
+              event.preventDefault();
+              sendJson({ id: post.id, answer: area.value, password: adminPassword }).then(function () {
+                note.textContent = "답변을 등록했습니다. 이 페이지를 연 선생님들에게 함께 보입니다.";
+                load();
+              }).catch(function (err) {
+                note.textContent = err.message;
+              });
+            });
+            card.appendChild(reply);
+          }
+          list.appendChild(card);
+        });
+        drawPager();
+      }
+
+      function sendJson(body) {
+        return fetch(boardUrl, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(body)
+        }).then(function (res) {
+          return res.json().then(function (data) {
+            if (!res.ok || (data && data.error)) throw new Error((data && data.error) || "저장하지 못했습니다.");
+            return data;
+          });
+        });
+      }
+
+      function load() {
+        return fetch(boardUrl).then(function (res) {
+          if (!res.ok) throw new Error("게시판을 불러오지 못했습니다.");
+          return res.json();
+        }).then(function (data) {
+          var json = JSON.stringify(data.posts || []);
+          posts = data.posts || [];
+          showError("");
+          if (json !== lastJson) {
+            lastJson = json;
+            draw();
+          }
+        }).catch(function () {
+          showError("일반 문의 게시판을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.");
+        });
+      }
+
+      function sendAccountInquiry() {
+        var body = new URLSearchParams();
+        body.set("entry.43657346", fieldValue("board-question"));
+        body.set("entry.2120361024", "예");
+        body.set("entry.558495470", "동의합니다");
+        body.set("entry.1752877957", fieldValue("board-office"));
+        body.set("entry.1898198620", fieldValue("board-school"));
+        body.set("entry.2015132952", fieldValue("board-account"));
+        body.set("entry.1696875155", fieldValue("board-name"));
+        body.set("entry.9013130", fieldValue("board-phone"));
+        var privateNote = fieldValue("board-private");
+        if (privateNote) body.set("entry.289079600", privateNote);
+        body.set("fvv", "1");
+        body.set("pageHistory", "0,1");
+        body.set("submit", "Submit");
+        return fetch(endpoint, { method: "POST", mode: "no-cors", body: body });
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        var agree = document.getElementById("board-agree").checked;
+        note.textContent = agree ? "운영팀에 전달하는 중입니다." : "남기는 중입니다.";
+        var request = agree
+          ? sendAccountInquiry()
+          : sendJson({ question: fieldValue("board-question") });
+        request.then(function () {
+          form.reset();
+          setAccountMode(false);
+          if (agree) {
+            note.textContent = "계정 조치 문의를 운영팀에 전달했습니다. 이 내용은 게시판에 공개되지 않습니다.";
+            return;
+          }
+          note.textContent = "문의를 남겼습니다. 답변이 달리면 이 게시판에서 모든 선생님이 함께 볼 수 있습니다.";
+          page = 0;
+          load();
+        }).catch(function (err) {
+          note.textContent = (err && err.message === "Failed to fetch")
+            ? "저장 서버에 연결하지 못했습니다. 페이지 파일을 직접 열었거나 서버가 꺼져 있습니다."
+            : (err && err.message) || "저장하지 못했습니다.";
+        });
+      });
+
+      document.getElementById("board-agree").addEventListener("change", function (event) {
+        setAccountMode(event.target.checked);
+      });
+
+      adminToggle.addEventListener("click", function () {
+        adminBar.hidden = !adminBar.hidden;
+      });
+      adminBar.addEventListener("submit", function (event) {
+        event.preventDefault();
+        adminPassword = document.getElementById("admin-password").value;
+        if (!adminPassword) {
+          note.textContent = "답변 비밀번호를 입력해 주세요.";
+          return;
+        }
+        note.textContent = "답변 작성 화면입니다. 답변 등록 때 비밀번호를 확인합니다.";
+        draw();
+      });
+
+      load();
+      setInterval(load, 15000);
+    })();
+
+    (function () {
+      var cards = Array.prototype.slice.call(document.querySelectorAll(".step-card"));
+      var title = document.getElementById("step-panel-title");
+      var copy = document.getElementById("step-panel-copy");
+      var serverLink = document.getElementById("step-server-link");
+      var shot = document.getElementById("step-shot");
+      var dots = document.getElementById("shot-dots");
+      var imageIndex = 0;
+
+      function list(card, name) {
+        return (card.getAttribute(name) || "").split("|").filter(Boolean);
+      }
+
+      function selected() {
+        return document.querySelector(".step-card.is-selected") || cards[0];
+      }
+
+      function show(card) {
+        var images = list(card, "data-images");
+        var alts = list(card, "data-alts");
+        if (!images.length) return;
+        if (imageIndex >= images.length) imageIndex = 0;
+        title.textContent = card.querySelector("h3").textContent;
+        copy.textContent = card.getAttribute("data-copy") || "";
+        serverLink.hidden = card !== cards[0];
+        document.getElementById("step-cta-hint").hidden = card !== cards[0];
+        document.getElementById("step-login-hint").hidden = card !== cards[1];
+        document.getElementById("step-qr-hint").hidden = card !== cards[2];
+        shot.src = images[imageIndex];
+        shot.alt = alts[imageIndex] || title.textContent;
+        if (shot.complete) fitShot();
+        var showLoginHint = card.getAttribute("data-login-hint") === "true";
+        document.getElementById("field-id").hidden = !showLoginHint;
+        document.getElementById("field-pw").hidden = !showLoginHint;
+        dots.innerHTML = "";
+        images.forEach(function (_, index) {
+          var dot = document.createElement("button");
+          dot.type = "button";
+          dot.setAttribute("aria-label", (index + 1) + "번째 이미지");
+          if (index === imageIndex) dot.setAttribute("aria-current", "true");
+          dot.addEventListener("click", function () {
+            imageIndex = index;
+            show(selected());
+          });
+          dots.appendChild(dot);
+        });
+        var single = images.length < 2;
+        document.querySelector(".shot-prev").hidden = single;
+        document.querySelector(".shot-next").hidden = single;
+      }
+
+      function select(card) {
+        cards.forEach(function (item) {
+          var on = item === card;
+          item.classList.toggle("is-selected", on);
+          item.setAttribute("aria-selected", on ? "true" : "false");
+        });
+        imageIndex = 0;
+        show(card);
+      }
+
+      cards.forEach(function (card) {
+        card.addEventListener("click", function () { select(card); });
+        card.addEventListener("keydown", function (event) {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          if (event.target.closest("a")) return;
+          event.preventDefault();
+          select(card);
+        });
+      });
+
+      document.querySelector(".shot-prev").addEventListener("click", function () {
+        var images = list(selected(), "data-images");
+        imageIndex = (imageIndex - 1 + images.length) % images.length;
+        show(selected());
+      });
+      document.querySelector(".shot-next").addEventListener("click", function () {
+        var images = list(selected(), "data-images");
+        imageIndex = (imageIndex + 1) % images.length;
+        show(selected());
+      });
+
+      function fitShot() {
+        var stage = document.querySelector(".step-stage");
+        var frame = document.getElementById("shot-frame");
+        var iw = shot.naturalWidth;
+        var ih = shot.naturalHeight;
+        if (!stage || !frame || !iw || !ih) return;
+        var scale = Math.min(stage.clientWidth / iw, stage.clientHeight / ih);
+        frame.style.width = Math.max(1, Math.floor(iw * scale)) + "px";
+        frame.style.height = Math.max(1, Math.floor(ih * scale)) + "px";
+      }
+
+      shot.addEventListener("load", fitShot);
+      window.addEventListener("resize", fitShot);
+      show(selected());
+    })();
+  </script>
+</body>
+</html>
