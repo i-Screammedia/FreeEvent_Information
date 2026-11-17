@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI 디지털 교육자료 무료체험 사용 안내 | 아이스크림미디어</title>
-  <meta name="description" content="AI 디지털 교육자료(수학) 무료체험 EVENT 사용 안내. 선생님은 아이스크림 계정으로, 학생은 QR코드로 이용합니다." />
+  <title>AI 디지털 교육자료 1차 무료체험 사용 안내 | 아이스크림미디어</title>
+  <meta name="description" content="AI 디지털 교육자료(수학) 1차 무료체험 사용 안내. 이용 기간은 11월 23일부터 12월 6일까지입니다." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <style>
     :root {
@@ -217,7 +217,7 @@
       max-width: 560px;
     }
     .status strong { display: block; font-size: 30px; line-height: 1.35; letter-spacing: -0.03em; }
-    .status p { margin: 4px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
+    .status p { margin: 4px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; white-space: pre-line; }
     .status-dot {
       width: 14px;
       height: 14px;
@@ -394,6 +394,55 @@
       font-size: 13px;
     }
     .round-2 .timeline b { background: #fff1e6; color: #c2410c; }
+    .month-cal {
+      margin-top: 32px;
+      max-width: 640px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px 22px 18px;
+    }
+    .month-cal h3 { margin: 0 0 16px; font-size: 28px; letter-spacing: -0.04em; }
+    .month-cal h3:not(:first-child) { margin-top: 28px; }
+    .cal-head, .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); }
+    .cal-head span, .day .num {
+      display: block;
+      text-align: center;
+      font-weight: 700;
+    }
+    .cal-head span { color: #98a2b3; font-size: 14px; padding-bottom: 8px; }
+    .cal-head .sun, .day .num.sun { color: #ef3b3b; }
+    .day { display: flex; flex-direction: column; min-height: 64px; padding: 4px 0 8px; }
+    .bar { align-self: stretch; }
+    .day .num { color: #98a2b3; font-size: 15px; }
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 26px;
+      margin-top: 8px;
+      color: transparent;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .bar.show { color: #fff; overflow: visible; position: relative; z-index: 1; }
+    .bar.apply { background: #8ebcff; }
+    .bar.use { background: #2f6bff; }
+    .bar.start { border-radius: 999px 0 0 999px; margin-left: 8px; }
+    .bar.end { border-radius: 0 999px 999px 0; margin-right: 8px; }
+    .bar.start.end { border-radius: 999px; }
+    .issue {
+      display: inline-flex;
+      align-self: center;
+      margin-top: 8px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #ffe14a;
+      color: #202638;
+      font-size: 12px;
+      font-weight: 800;
+    }
     .notice { padding: 36px 0 0; }
     .notice-card {
       border: 2px solid #ffc9c9;
@@ -451,14 +500,14 @@
     }
     .notice-foot a { color: var(--primary); font-weight: 800; }
     .callout {
-      margin: 18px auto 0;
+      margin: 18px 0 0;
       width: fit-content;
       max-width: 100%;
       background: #fff4c8;
       border-radius: 999px;
       padding: 14px 22px;
       font-weight: 700;
-      text-align: center;
+      text-align: left;
       box-shadow: 0 8px 22px rgba(255, 214, 120, 0.28);
     }
     .notes { margin: 18px 0 0; padding: 0; color: var(--muted); line-height: 1.7; }
@@ -555,7 +604,9 @@
     .step-card { height: 100%; cursor: pointer; text-align: left; }
     .step-card.is-selected {
       border-color: var(--primary);
-      box-shadow: 0 12px 28px rgba(52, 120, 246, 0.16);
+      box-shadow:
+        0 0 0 2px var(--primary),
+        0 12px 28px rgba(52, 120, 246, 0.16);
     }
     .step-showcase {
       margin-top: 18px;
@@ -578,6 +629,22 @@
     .step-panel-text { min-width: 0; flex: 1; }
     .step-panel h3 { margin: 0; font-size: 24px; letter-spacing: -0.03em; }
     .step-panel p { margin: 10px 0 0; color: #3d4d6b; line-height: 1.75; white-space: pre-line; }
+    .feature-demo {
+      margin-top: 14px;
+      overflow: hidden;
+      height: min(860px, 78vh);
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: 0 16px 40px rgba(32, 38, 56, 0.08);
+    }
+    .feature-demo[hidden] { display: none; }
+    .feature-demo iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #fff;
+    }
     .step-panel .step-cta-hint {
       margin: 8px 0 0;
       color: #e03131;
@@ -780,6 +847,12 @@
       flex: none;
     }
     #contact .section-lead { max-width: none; color: #e03131; font-weight: 800; }
+    .board-step {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+    .board-form .board-step:not(:first-child) { margin-top: 28px; }
     .board-notice {
       margin: 0;
       color: #8c3a2f;
@@ -792,6 +865,7 @@
       padding: 0;
       border: 0;
     }
+    #account-fields[hidden] { display: none; }
     .account-fields:disabled { opacity: 0.55; }
     .board-form textarea { min-height: 120px; }
     .board-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 14px; }
@@ -938,12 +1012,11 @@
     <div class="wrap">
       <a class="brand" href="https://aidt.i-scream.co.kr/" target="_blank" rel="noopener noreferrer">
         <img src="https://i-screammedia-aidt-free-trial-event.vercel.app/brand/i-scream-media.png?v=3" alt="i-Scream media" />
-        <span class="brand-tag">사용 안내</span>
+        <span class="brand-tag">1차 안내</span>
       </a>
       <nav class="nav" aria-label="사용 안내 메뉴">
-        <a href="#round2">2차 배정</a>
-        <a href="#schedule">이용 일정</a>
         <a href="#howto">사용 방법</a>
+        <a href="#schedule">이용 일정</a>
         <a href="#features">수업 기능</a>
         <a href="#contact">문의</a>
         <a class="ghost" href="https://i-screammedia-aidt-free-trial-event.vercel.app/" target="_blank" rel="noopener noreferrer">이벤트 페이지</a>
@@ -969,18 +1042,13 @@
             </h1>
             <p class="hero-copy">
               신청해 주신 선생님을 위한 안내입니다.<br />
-              자세한 이용 방법 및 이벤트 관련 안내는<br />
-              이벤트 신청시 등록하신 메일 주소로 보내드립니다.<br />
-              선생님은 통합계정으로, 학생들은 QR코드로 수업에 들어옵니다.
+              아래 내용들을 확인해 주세요.<br />
+              선생님은 아이스크림 통합계정으로, 학생들은 QR코드로 수업에 들어옵니다.
             </p>
             <ul class="chips">
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 3v4M16 3v4M4 10h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                1차 이용 11.23–12.06
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 3v4M16 3v4M4 10h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                2차 이용 11.30–12.13
+                이용 기간 11.23–12.06
               </li>
               <li>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="9" r="2.4" stroke="currentColor" stroke-width="2"/><path d="M3.5 19c.6-2.8 2.8-4 5.5-4s4.9 1.2 5.5 4M14 15.2c1.4-.4 2.8-.2 4.2.8.9.7 1.6 1.7 1.9 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -994,8 +1062,8 @@
             <div class="status" id="today-status" aria-live="polite">
               <span class="status-dot"></span>
               <div>
-                <strong>11월 11일 00시 이후 신청은 2차 체험단입니다.</strong>
-                <p>1차 모집이 조기 마감되어 자동 배정됩니다. 2차 체험 기간은 11월 30일부터 12월 13일까지(2주간) 이고, 상세 가이드는 본 이벤트 운영 페이지 & 메일로 안내됩니다.</p>
+                <strong>체험 시작은 11월 23일부터입니다.</strong>
+                <p hidden></p>
               </div>
             </div>
           </div>
@@ -1013,84 +1081,17 @@
 
         <aside class="prize">
           <div class="prize-copy">
-            <p class="prize-title">이벤트에 참여 완료한 선생님 50분께<br />추첨을 통해 <span>네이버페이 포인트 10,000원</span>을 드려요!</p>
-            <p class="prize-note">( 실제 로그인 하시고, 체험한 대상자 중, 추첨하여 지급합니다. )</p>
+            <p class="prize-title">실제로 로그인을 하고 수업에 사용하신 선생님들 중 추첨을 통해 총 50분께<br /><span>네이버페이 포인트 10,000원</span>을 드려요!</p>
           </div>
           <img class="prize-visual" src="네이버페이.png" alt="네이버페이 포인트 10,000" />
         </aside>
       </div>
     </section>
 
-    <section class="notice" id="round2">
-      <div class="wrap">
-        <article class="notice-card">
-          <p class="notice-badge">중요 안내</p>
-          <h2>2차 체험단 배정 및 일정 안내</h2>
-          <p class="notice-lead">
-            안녕하세요, 선생님.<br />
-            AI 디지털 교육자료(수학) 무료체험에 뜨거운 관심과 성원을 보내주셔서 진심으로 감사드립니다.
-          </p>
-          <p class="notice-lead">
-            기존 안내해 드린 1차 체험단(11/23 ~ 2주간) 모집 인원이 조기 마감됨에 따라,
-            <strong>11월 11일(수) 00시 이후 신청해 주신 선생님께서는 2차 체험단으로 자동 배정</strong>되셨습니다.
-            상세한 2차 체험단 진행 일정을 아래와 같이 안내해 드리오니 확인 부탁드립니다.
-          </p>
-          <ul class="notice-points">
-            <li><span>배정 회차</span>2차 체험단 (11월 11일(수) 00시 이후 신청자)</li>
-            <li><span>체험 기간</span>2026년 11월 30일(월) ~ 12월 13일(일) (2주간)</li>
-            <li><span>향후 안내</span>체험 시작 전 상세 가이드 (본 페이지 & 메일 발송)를 추가로 전달 드릴 예정입니다.</li>
-          </ul>
-          <p class="notice-foot">
-            일정 변동으로 인해 기다려주시는 만큼 더욱 만족스러운 체험이 되실 수 있도록 꼼꼼히 준비하겠습니다.<br />
-            궁금하신 점이나 일정 조율이 필요하시면 신청 안내 메일로 회신하시거나, <a href="#contact">문의 안내</a>를 확인해 주세요.
-            감사합니다.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section id="schedule">
-      <div class="wrap">
-        <p class="eyebrow">이용 일정</p>
-        <h2>아래 1차, 2차 일정을 꼭! 확인해주세요.</h2>
-        <p class="section-lead">신청한다고 바로 열리지는 않습니다. 회차 발급일에 계정이 준비되고, 이용 기간이 시작된 뒤 수업에 사용할 수 있습니다.</p>
-        <div class="rounds">
-          <article class="card">
-            <p class="round-label">1차</p>
-            <h3>11월 23일부터 12월 6일</h3>
-            <p class="meta">11월 11일(수) 00시 이전 신청한 학급</p>
-            <ul class="timeline">
-              <li><b>신청</b><span>2026.11.09.(월) – 11.10.(화)</span></li>
-              <li><b>안내</b><span>체험 시작 전 상세 가이드 (본 페이지 & 메일 발송)</span></li>
-              <li><b>이용</b><span>2026.11.23.(월) – 12.06.(일)</span></li>
-            </ul>
-          </article>
-          <article class="card round-2">
-            <p class="round-label round-2">2차</p>
-            <h3>11월 30일부터 12월 13일</h3>
-            <p class="meta">11월 11일(수) 00시 이후 신청한 학급</p>
-            <ul class="timeline">
-              <li><b>신청</b><span>2026.11.11.(수) 00시 이후</span></li>
-              <li><b>안내</b><span>체험 시작 전 상세 가이드 (본 페이지 & 메일 발송)</span></li>
-              <li><b>이용</b><span>2026.11.30.(월) – 12.13.(일)</span></li>
-            </ul>
-          </article>
-        </div>
-        <p class="callout">이용기간 연장이 필요하신 경우에는 개별 연락주시면 최대 2주 더 연장이 가능합니다.</p>
-        <ul class="notes">
-          <li class="note-strong">1차 체험단은 조기 마감되었습니다. 11월 11일(수) 00시 이후 신청은 2차 체험단으로 배정됩니다.</li>
-          <li>전체 신청 기간은 2026년 11월 9일부터 11월 22일까지입니다.</li>
-          <li>자세한 이용 방법 및 이벤트 관련 안내는<br />이벤트 신청시 등록하신 메일 주소로 보내드립니다.</li>
-          <li>신청 정보 및 교원인증 확인 결과에 따라 발급이 제한될 수 있습니다.</li>
-          <li>동일 학교·학년·반에는 1개의 체험 계정만 발급됩니다. 실제 담당 학급 정보를 기준으로 확인해 주세요.</li>
-        </ul>
-      </div>
-    </section>
-
     <section class="soft" id="howto">
       <div class="wrap">
         <p class="eyebrow">사용 방법</p>
-        <h2>선생님은 계정으로, 학생은 QR로.</h2>
+        <h2>선생님은 아이스크림 통합 계정으로, 학생은 QR로</h2>
         <p class="section-lead">학생은 별도의 아이스크림 통합회원 ID와 비밀번호가 필요하지 않습니다.<br />신청하신 학생 수만큼 QR이 선생님 로그인 시 발급됩니다.</p>
         <div class="steps" role="tablist" aria-label="사용 방법">
           <article class="card step-card step is-selected" role="tab" tabindex="0" aria-selected="true" data-copy="300 학급에게만 특별히 열어드리는 '사전 체험 전용 독립 서버(Stage)'입니다.&#10;본 서버에서 빠르고 쾌적하게 AIDT 신기능을 마음껏 테스트해 보세요!" data-images="홈화면01.png|홈화면02.png" data-alts="AI 디지털 교육자료 홈 화면 1|AI 디지털 교육자료 홈 화면 2">
@@ -1137,47 +1138,85 @@
       </div>
     </section>
 
+    <section id="schedule">
+      <div class="wrap">
+        <p class="eyebrow">이용 일정</p>
+        <h2>일정을 꼭! 확인해주세요.</h2>
+        <div class="month-cal">
+          <h3>2026년 11월</h3>
+          <div class="cal-head" aria-hidden="true"><span class="sun">일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div>
+          <div class="cal-grid" role="img" aria-label="11월 9일부터 10일까지 1차 신청, 11월 16일 발급, 11월 23일부터 1차 이용">
+            <div class="day"><span class="num sun">1</span></div><div class="day"><span class="num">2</span></div><div class="day"><span class="num">3</span></div><div class="day"><span class="num">4</span></div><div class="day"><span class="num">5</span></div><div class="day"><span class="num">6</span></div><div class="day"><span class="num">7</span></div>
+            <div class="day"><span class="num sun">8</span></div>
+            <div class="day"><span class="num">9</span><span class="bar apply start show">1차 신청</span></div>
+            <div class="day"><span class="num">10</span><span class="bar apply end"></span></div>
+            <div class="day"><span class="num">11</span></div><div class="day"><span class="num">12</span></div><div class="day"><span class="num">13</span></div><div class="day"><span class="num">14</span></div>
+            <div class="day"><span class="num sun">15</span></div>
+            <div class="day"><span class="num">16</span><span class="issue">발급</span></div>
+            <div class="day"><span class="num">17</span></div><div class="day"><span class="num">18</span></div><div class="day"><span class="num">19</span></div><div class="day"><span class="num">20</span></div><div class="day"><span class="num">21</span></div>
+            <div class="day"><span class="num sun">22</span></div>
+            <div class="day"><span class="num">23</span><span class="bar use start show">1차 이용</span></div>
+            <div class="day"><span class="num">24</span><span class="bar use"></span></div>
+            <div class="day"><span class="num">25</span><span class="bar use"></span></div>
+            <div class="day"><span class="num">26</span><span class="bar use"></span></div>
+            <div class="day"><span class="num">27</span><span class="bar use"></span></div>
+            <div class="day"><span class="num">28</span><span class="bar use end"></span></div>
+            <div class="day"><span class="num sun">29</span><span class="bar use start"></span></div>
+            <div class="day"><span class="num">30</span><span class="bar use end"></span></div>
+          </div>
+          <h3>2026년 12월</h3>
+          <div class="cal-head" aria-hidden="true"><span class="sun">일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div>
+          <div class="cal-grid" role="img" aria-label="12월 1일부터 6일까지 1차 이용">
+            <div class="day"></div><div class="day"></div>
+            <div class="day"><span class="num">1</span><span class="bar use start show">1차 이용</span></div>
+            <div class="day"><span class="num">2</span><span class="bar use"></span></div>
+            <div class="day"><span class="num">3</span><span class="bar use"></span></div>
+            <div class="day"><span class="num">4</span><span class="bar use"></span></div>
+            <div class="day"><span class="num">5</span><span class="bar use end"></span></div>
+            <div class="day"><span class="num sun">6</span><span class="bar use start end show">1차 이용</span></div>
+          </div>
+        </div>
+        <p class="callout">이용기간 연장이 필요하신 경우에는 개별 연락주시면 최대 2주 더 연장이 가능합니다.</p>
+        <ul class="notes">
+          <li class="note-strong">이용 기간은 2026년 11월 23일부터 12월 6일까지입니다.</li>
+          <li>아래 내용들을 확인해 주세요.</li>
+          <li>신청 정보 및 교원인증 확인 결과에 따라 발급이 제한될 수 있습니다.</li>
+          <li>동일 학교·학년·반에는 1개의 체험 계정만 발급됩니다. 실제 담당 학급 정보를 기준으로 확인해 주세요.</li>
+        </ul>
+      </div>
+    </section>
+
     <section id="features">
       <div class="wrap">
         <p class="eyebrow">수업에서 열어보기</p>
-        <h2>체험 기간에 먼저 써볼 기능입니다.</h2>
+        <h2>체험 기간에 이용하실 수 있는 주요 기능을 안내합니다.</h2>
         <p class="section-lead">새로워진 AI 디지털 교육자료를 우리 반 학생들과 직접 경험해 보세요.</p>
-        <div class="features">
-          <article class="card feature">
-            <div class="icon-bubble" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </div>
-            <h3>교과서/수학익힘</h3>
-            <p>아이스크림 수학교과서와 진도에 맞춘 수학익힘을 수업 중 바로 열고, 학생 답안과 필기를 확인할 수 있습니다.</p>
+        <div class="steps" role="tablist" aria-label="체험 기능">
+          <article class="card step-card step is-selected" role="tab" tabindex="0" aria-selected="true" data-demo-src="수업화면/index.html" data-copy="아이스크림 수학교과서와 진도에 맞춘 수학익힘을 수업 중 바로 엽니다. 모둠 구성, 발표자 뽑기, 자리 바꾸기, 룰렛 같은 수업 도구와 AI 수학교구도 수업 안에서 함께 쓸 수 있습니다.">
+            <span class="step-no">01</span>
+            <h3>수업</h3>
           </article>
-          <article class="card feature">
-            <div class="icon-bubble" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 19V9M12 19V5M19 19v-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </div>
-            <h3>평가 2세트</h3>
-            <p>형성·단원평가를 2세트씩 제공합니다. 다시 풀어야 할 때 사용하고, 학급과 학생별 성취를 대시보드에서 볼 수 있습니다.</p>
+          <article class="card step-card step" role="tab" tabindex="0" aria-selected="false" data-demo-src="수업화면/index.html?menu=eval" data-copy="형성평가와 단원평가를 2세트씩 제공합니다. 다시 풀어야 할 때 사용하고, 학생 답안을 확인할 수 있습니다.">
+            <span class="step-no">02</span>
+            <h3>평가</h3>
           </article>
-          <article class="card feature">
-            <div class="icon-bubble" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="16" r="3" stroke="currentColor" stroke-width="2"/><path d="M11 8h6M8 11v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            </div>
-            <h3>수업 도구</h3>
-            <p>모둠 구성, 발표자 뽑기, 자리 바꾸기, 룰렛처럼 수업 흐름을 돕는 도구를 수업 안에서 바로 쓸 수 있습니다.</p>
+          <article class="card step-card step" role="tab" tabindex="0" aria-selected="false" data-demo-src="수업화면/index.html?menu=self" data-copy="학생이 혼자 또는 친구와 함께 수학 게임과 디지털 교구로 개념을 익힐 수 있습니다. 우리 반 랭킹도 함께 확인할 수 있습니다.">
+            <span class="step-no">03</span>
+            <h3>스스로 학습</h3>
           </article>
-          <article class="card feature">
-            <div class="icon-bubble" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="currentColor" stroke-width="2"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" stroke="currentColor" stroke-width="2"/></svg>
-            </div>
-            <h3>AI 수학교구</h3>
-            <p>21종의 디지털 교구로 분수, 시계, 입체도형처럼 추상적인 개념을 학생이 직접 조작하며 볼 수 있습니다.</p>
+          <article class="card step-card step" role="tab" tabindex="0" aria-selected="false" data-demo-src="수업화면/index.html?menu=dash" data-copy="학급과 학생별 성취, 참여 현황을 한 화면에서 확인할 수 있습니다.">
+            <span class="step-no">04</span>
+            <h3>대시보드</h3>
           </article>
-          <article class="card feature">
-            <div class="icon-bubble" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="18" height="10" rx="3" stroke="currentColor" stroke-width="2"/><path d="M8 8V6a4 4 0 018 0v2" stroke="currentColor" stroke-width="2"/></svg>
-            </div>
-            <h3>수학 게임</h3>
-            <p>혼자 하기와 같이 하기, 팀전과 개인전으로 참여할 수 있습니다. 우리 반 랭킹도 함께 확인할 수 있습니다.</p>
-          </article>
+        </div>
+        <div class="step-showcase">
+          <div class="step-panel" id="feature-panel" role="tabpanel">
+            <h3 id="feature-panel-title">수업</h3>
+            <p id="feature-panel-copy">아이스크림 수학교과서와 진도에 맞춘 수학익힘을 수업 중 바로 엽니다. 모둠 구성, 발표자 뽑기, 자리 바꾸기, 룰렛 같은 수업 도구와 AI 수학교구도 수업 안에서 함께 쓸 수 있습니다.</p>
+          </div>
+          <div class="feature-demo" id="feature-demo">
+            <iframe src="수업화면/index.html" data-base="수업화면/index.html" title="수업 화면"></iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -1185,30 +1224,30 @@
     <section class="soft" id="contact">
       <div class="wrap">
         <p class="eyebrow">관련 문의</p>
-        <h2>일반 문의는 아래에서 함께 확인합니다.</h2>
-        <p class="section-lead">문의와 답변 내용은 아이스크림 AI 디지털 교육자료를 체험하는 모든 선생님과 함께 공유됩니다.<br />개인정보 수집에 동의한 계정의 교육청, 학교, 계정, 이름, 연락처는 게시판에 올리지 않고 운영팀만 확인합니다.</p>
+        <h2>선생님들의 질문과 답변을 모아두었어요</h2>
+        <p class="section-lead">등록하신 문의와 답변은 체험에 참여하는 모든 선생님들과 공유됩니다.<br />단, 교육청, 학교, 아이디, 이름, 연락처 등의 개인정보는 운영팀만 안전하게 확인하며 게시판에 공개되지 않습니다.</p>
         <form class="board-form" id="board-form">
-          <p class="board-notice">단순한 이용 문의는 동의 없이 작성할 수 있습니다. 다만 발급된 계정에 대한 별도 조치가 필요한 경우 개인정보 작성을 하지 않으면 처리가 어려울 수 있습니다.</p>
-          <label for="board-question">문의 내용 <span id="question-visibility">게시판에 공개됩니다</span>
-            <textarea id="board-question" name="question" maxlength="2000" required placeholder="궁금한 점을 적어 주세요."></textarea>
+          <h3 class="board-step">01 일반 문의</h3>
+          <p class="board-notice">일반적인 이용 문의는 개인 정보 동의 없이 바로 남기실 수 있습니다.<br />단, 발급된 계정 관련 추가 조치가 필요한 경우, 개인정보 수집에 동의해주셔야 신속한 처리가 가능합니다.</p>
+          <label for="board-question">문의 내용 <span id="question-visibility">문의하신 내용과 답변은 모든 분들과 함께 볼 수 있어요!</span>
+            <textarea id="board-question" name="question" maxlength="2000" required placeholder="체험 하시면서 QR 코드, 계정 이용 등 궁금하신 점을 자유롭게 남겨 주세요."></textarea>
           </label>
+          <h3 class="board-step">02 추가 요청 문의</h3>
+          <p class="board-notice">일반 문의 외에, 발급된 계정 관련 조치가 필요한 경우 아래 체크 박스 클릭 후, 추가 정보를 입력해 주세요.</p>
           <details class="privacy">
             <summary>개인정보 수집·이용 안내 전문 보기</summary>
             <div class="privacy-body">
               <p class="privacy-mark">※ 개인정보 수집·이용 안내</p>
               <p>아이스크림 AI 디지털 교육자료 무료 체험 기간 중 문의 사항에 대해 조치를 취하기 위해 개인정보(소속 교육청, 학교명, 이름, 연락처)를 수집·이용합니다.</p>
-              <p>이벤트 참여 확인, 당첨자 선정 및 경품 발송을 위해 개인정보(소속 교육청, 학교명, 이름, 연락처)를 수집·이용합니다.</p>
-              <p>수집된 개인정보는 이벤트 운영, 본인 확인, 중복 참여 방지, 당첨 안내 및 경품 발송 목적으로만 이용되며 개인정보는 이벤트 종료 및 경품 발송 목적 달성 시 즉시 파기합니다.</p>
-              <p class="privacy-mark">[개인정보 제3자 제공 안내]</p>
-              <p>제공받는 자 : 다우기술<br>제공 항목 : 이름, 연락처<br>제공 목적 : 경품 발송<br>보유 및 이용 기간 : 경품 발송 완료 시까지</p>
-              <p class="privacy-mark">※ 개인정보 수집·이용 및 제3자 제공에 동의를 거부할 권리가 있으나 동의하지 않을 경우 이벤트 참여 및 경품 제공이 제한될 수 있습니다</p>
+              <p>수집된 개인정보는 이벤트 운영, 본인 확인, 중복 참여 방지 목적으로만 이용되며 이벤트 종료 및 목적 달성 시 즉시 파기합니다.</p>
+              <p class="privacy-mark">※ 개인정보 수집·이용 및 제3자 제공에 동의를 거부할 권리가 있으나 동의하지 않을 경우 관련 문의 처리가 제한될 수 있습니다.</p>
             </div>
           </details>
           <label class="consent" for="board-agree">
             <input id="board-agree" name="agree" type="checkbox" />
-            단순 문의 외에 발급된 계정에 대한 추가 조치가 필요한 경우는 왼쪽 체크 박스 클릭 후, 아래 내용을 작성해주세요.
+            [계정 오류 조치 및 지원 요청] 계정 발급 확인이나 별도 조치가 필요한 경우만 체크 후 아래 정보를 입력해 주세요.
           </label>
-          <fieldset class="account-fields" id="account-fields" disabled>
+          <fieldset class="account-fields" id="account-fields" hidden disabled>
             <label for="board-office">소속 교육청
               <input id="board-office" name="office" maxlength="40" placeholder="예: 서울" />
             </label>
@@ -1250,7 +1289,7 @@
         <div class="faq">
           <details open>
             <summary>신청하면 바로 사용할 수 있나요?</summary>
-            <p>아니요. 1차 이용은 11월 23일부터 12월 6일까지, 2차 이용은 11월 30일부터 12월 13일까지입니다.</p>
+            <p>아니요. 이용은 11월 23일부터 시작해서 12월 6일까지입니다.</p>
           </details>
           <details>
             <summary>학생도 아이스크림 계정이 필요한가요?</summary>
@@ -1270,11 +1309,11 @@
           </details>
           <details>
             <summary>네이버페이 포인트는 누구나 받을 수 있나요?</summary>
-            <p>이벤트에 참여 완료한 선생님 50분께 추첨을 통해 네이버페이 포인트 10,000원을 드립니다. 실제 로그인하시고, 체험한 대상자 중에서 추첨하여 지급합니다.</p>
+            <p>이벤트에 참여 완료하여 실제 로그인하시고 수업에 활용하신 선생님 50분께 추첨을 통해 지급됩니다.</p>
           </details>
           <details>
             <summary>1, 2학년 학급도 이 안내대로 쓰면 되나요?</summary>
-            <p>이 무료체험은 초등학교 3~6학년 선생님을 대상으로 합니다. 1, 2학년 선생님은 <a href="https://aidt.i-scream.co.kr/" target="_blank" rel="noopener noreferrer">아이스크림 AI 디지털 교육자료 홈페이지</a>에서 체험해 보시거나, 아래 문의에 남겨 주세요.</p>
+            <p>이 무료체험은 초등학교 3~6학년 선생님을 대상으로 합니다. 1, 2학년 선생님은 <a href="https://aidt.i-scream.co.kr/" target="_blank" rel="noopener noreferrer">아이스크림 AI 디지털 교육자료 홈페이지</a>에서 체험해 보세요.</p>
           </details>
         </div>
       </div>
@@ -1289,9 +1328,8 @@
           <p style="margin:14px 0 0;"><a href="https://aidt.i-scream.co.kr/" target="_blank" rel="noopener noreferrer">아이스크림 AI 디지털 교육자료 홈페이지 바로 가기</a></p>
         </div>
         <nav class="footer-links" aria-label="하단 메뉴">
-          <a href="#round2">2차 배정</a>
-          <a href="#schedule">이용 일정</a>
           <a href="#howto">사용 방법</a>
+          <a href="#schedule">이용 일정</a>
           <a href="#features">수업 기능</a>
           <a href="#contact">문의</a>
           <a href="https://i-screammedia-aidt-free-trial-event.vercel.app/" target="_blank" rel="noopener noreferrer">이벤트 페이지</a>
@@ -1303,10 +1341,7 @@
 
   <script>
     (function () {
-      var rounds = [
-        { id: "1차", applyStart: "2026-11-09", applyEnd: "2026-11-10", issue: "2026-11-16", useStart: "2026-11-23", useEnd: "2026-12-06" },
-        { id: "2차", applyStart: "2026-11-11", applyEnd: "2026-11-22", issue: "2026-11-23", useStart: "2026-11-30", useEnd: "2026-12-13" }
-      ];
+      var round = { applyStart: "2026-11-09", applyEnd: "2026-11-10", useStart: "2026-11-23", useEnd: "2026-12-06" };
 
       function kstToday() {
         var parts = new Intl.DateTimeFormat("en-CA", {
@@ -1325,35 +1360,31 @@
       }
 
       var today = kstToday();
-      var title = "11월 11일 00시 이후 신청은 2차 체험단입니다.";
-      var body = "1차 모집이 조기 마감되어 자동 배정됩니다. 2차 체험 기간은 11월 30일부터 12월 13일까지(2주간) 이고, 상세 가이드는 본 이벤트 운영 페이지 & 메일로 안내됩니다.";
+      var title = "체험 시작은 11월 23일부터입니다.";
+      var body = "";
 
-      if (today < rounds[0].applyStart) {
-        title = "무료체험 신청이 곧 시작됩니다.";
-        body = "신청은 " + label(rounds[0].applyStart) + "부터입니다. 자세한 이용 방법 및 이벤트 관련 안내는 이벤트 신청시 등록하신 메일 주소로 보내드립니다.";
-      } else if (today <= rounds[0].applyEnd) {
+      if (today < round.applyStart) {
+        title = "1차 무료체험 신청이 곧 시작됩니다.";
+        body = "신청은 " + label(round.applyStart) + "부터입니다. 아래 내용들을 확인해 주세요.";
+      } else if (today <= round.applyEnd) {
         title = "지금은 1차 신청 기간입니다.";
-        body = "1차 계정 발급일은 " + label(rounds[0].issue) + "이고, 수업에서 쓰는 기간은 " + label(rounds[0].useStart) + "부터입니다.";
-      } else if (today <= rounds[1].applyEnd) {
-        title = "11월 11일 00시 이후 신청은 2차 체험단입니다.";
-        body = "1차 모집이 조기 마감되어 자동 배정됩니다. 2차 체험 기간은 11월 30일부터 12월 13일까지(2주간) 이고, 상세 가이드는 본 이벤트 운영 페이지 & 메일로 안내됩니다.";
-      } else if (today < rounds[1].useStart) {
-        title = "1차 이용이 시작되었습니다.";
-        body = "1차 학급은 11월 23일부터 12월 6일까지 사용할 수 있습니다. 2차 상세 가이드는 11월 27일경 메일로 안내되고, 2차 이용은 " + label(rounds[1].useStart) + "에 시작됩니다.";
-      } else if (today <= rounds[0].useEnd) {
-        title = "1차와 2차 이용이 함께 진행 중입니다.";
-        body = "1차는 12월 6일까지, 2차는 12월 13일까지 사용할 수 있습니다.";
-      } else if (today <= rounds[1].useEnd) {
-        title = "지금은 2차 이용 기간입니다.";
-        body = "2차 학급은 12월 13일까지 사용할 수 있습니다. 1차 이용은 12월 6일에 끝났습니다.";
+        body = "1차 이용은 " + label(round.useStart) + "부터 " + label(round.useEnd) + "까지입니다.";
+      } else if (today < round.useStart) {
+        title = "체험 시작은 11월 23일부터입니다.";
+        body = "";
+      } else if (today <= round.useEnd) {
+        title = "지금은 1차 이용 기간입니다.";
+        body = "1차 학급은 12월 6일까지 사용할 수 있습니다.";
       } else {
-        title = "안내된 이용 기간이 끝났습니다.";
+        title = "1차 이용 기간이 끝났습니다.";
         body = "연장이 필요하면 개별 연락으로 최대 2주까지 요청할 수 있습니다.";
       }
 
       var status = document.getElementById("today-status");
+      var statusBody = status.querySelector("p");
       status.querySelector("strong").textContent = title;
-      status.querySelector("p").textContent = body;
+      statusBody.textContent = body;
+      statusBody.hidden = !body;
     })();
 
     (function () {
@@ -1380,13 +1411,14 @@
 
       function setAccountMode(on) {
         var box = document.getElementById("account-fields");
+        box.hidden = !on;
         box.disabled = !on;
         accountFields.forEach(function (id) {
           document.getElementById(id).required = on;
         });
         visibility.textContent = on
-          ? "문의 내용은 게시판에 공개됩니다. 개인정보는 운영팀만 확인합니다"
-          : "게시판에 공개됩니다";
+          ? "문의 내용은 모든 분들과 함께 볼 수 있어요. 개인정보는 운영팀과 확인합니다."
+          : "문의하신 내용과 답변은 모든 분들과 함께 볼 수 있어요!";
       }
 
       function when(iso) {
@@ -1578,6 +1610,7 @@
       document.getElementById("board-agree").addEventListener("change", function (event) {
         setAccountMode(event.target.checked);
       });
+      setAccountMode(document.getElementById("board-agree").checked);
 
       adminToggle.addEventListener("click", function () {
         adminBar.hidden = !adminBar.hidden;
@@ -1598,7 +1631,8 @@
     })();
 
     (function () {
-      var cards = Array.prototype.slice.call(document.querySelectorAll(".step-card"));
+      var root = document.getElementById("howto");
+      var cards = Array.prototype.slice.call(root.querySelectorAll(".step-card"));
       var title = document.getElementById("step-panel-title");
       var copy = document.getElementById("step-panel-copy");
       var serverLink = document.getElementById("step-server-link");
@@ -1611,7 +1645,7 @@
       }
 
       function selected() {
-        return document.querySelector(".step-card.is-selected") || cards[0];
+        return root.querySelector(".step-card.is-selected") || cards[0];
       }
 
       function show(card) {
@@ -1644,8 +1678,8 @@
           dots.appendChild(dot);
         });
         var single = images.length < 2;
-        document.querySelector(".shot-prev").hidden = single;
-        document.querySelector(".shot-next").hidden = single;
+        root.querySelector(".shot-prev").hidden = single;
+        root.querySelector(".shot-next").hidden = single;
       }
 
       function select(card) {
@@ -1668,19 +1702,19 @@
         });
       });
 
-      document.querySelector(".shot-prev").addEventListener("click", function () {
+      root.querySelector(".shot-prev").addEventListener("click", function () {
         var images = list(selected(), "data-images");
         imageIndex = (imageIndex - 1 + images.length) % images.length;
         show(selected());
       });
-      document.querySelector(".shot-next").addEventListener("click", function () {
+      root.querySelector(".shot-next").addEventListener("click", function () {
         var images = list(selected(), "data-images");
         imageIndex = (imageIndex + 1) % images.length;
         show(selected());
       });
 
       function fitShot() {
-        var stage = document.querySelector(".step-stage");
+        var stage = root.querySelector(".step-stage");
         var frame = document.getElementById("shot-frame");
         var iw = shot.naturalWidth;
         var ih = shot.naturalHeight;
@@ -1693,6 +1727,54 @@
       shot.addEventListener("load", fitShot);
       window.addEventListener("resize", fitShot);
       show(selected());
+    })();
+
+    (function () {
+      var root = document.getElementById("features");
+      var cards = Array.prototype.slice.call(root.querySelectorAll(".step-card"));
+      var title = document.getElementById("feature-panel-title");
+      var copy = document.getElementById("feature-panel-copy");
+      var demo = document.getElementById("feature-demo");
+
+      function select(card) {
+        var wasDemo = !demo.hidden;
+        var src = card.getAttribute("data-demo-src") || "";
+        var isDemo = src.length > 0;
+        cards.forEach(function (item) {
+          var on = item === card;
+          item.classList.toggle("is-selected", on);
+          item.setAttribute("aria-selected", on ? "true" : "false");
+        });
+        title.textContent = card.querySelector("h3").textContent;
+        copy.textContent = card.getAttribute("data-copy") || "";
+        demo.hidden = !isDemo;
+        if (!isDemo) return;
+        var frame = demo.querySelector("iframe");
+        if (!frame) return;
+        if (!wasDemo || frame.getAttribute("data-base") !== src) {
+          frame.setAttribute("data-base", src);
+          frame.src = src + (src.indexOf("?") === -1 ? "?" : "&") + "reset=" + Date.now();
+        }
+      }
+
+      cards.forEach(function (card) {
+        card.addEventListener("click", function () { select(card); });
+        card.addEventListener("keydown", function (event) {
+          if (event.key !== "Enter" && event.key !== " ") return;
+          event.preventDefault();
+          select(card);
+        });
+      });
+
+      window.addEventListener("message", function (event) {
+        if (!event.data || event.data.type !== "aidt-open-eval") return;
+        var frame = demo.querySelector("iframe");
+        if (!frame || event.source !== frame.contentWindow) return;
+        var evalCard = cards.find(function (card) {
+          return (card.getAttribute("data-demo-src") || "").indexOf("menu=eval") !== -1;
+        });
+        if (evalCard) select(evalCard);
+      });
     })();
   </script>
 </body>
