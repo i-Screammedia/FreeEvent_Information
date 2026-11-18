@@ -2351,7 +2351,11 @@
   $("#lobbyEvalWrong")?.addEventListener("click", () => {
     if (!document.body.classList.contains("is-eval-due-tip")) return;
     showUnitTip("wrong");
-    lobbyToast("평가 화면 메뉴를 모두 살펴보았습니다.");
+    lobbyToast("평가 화면 메뉴를 모두 살펴보았습니다.", () => {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: "aidt-open-self" }, "*");
+      }
+    });
   });
   function setStars(count) {
     $("#starRate")?.querySelectorAll("button").forEach((btn) => {
@@ -2508,7 +2512,11 @@
   $("#lobbyPlayToggle")?.addEventListener("click", () => {
     if (!document.body.classList.contains("is-lobby-self-play")) return;
     if (!document.querySelector('.self-play-side figure[data-play="together"].is-on')) return;
-    lobbyToast("스스로 학습 메뉴 안내를 마칩니다.");
+    lobbyToast("스스로 학습 메뉴 안내를 마칩니다.", () => {
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: "aidt-open-dash" }, "*");
+      }
+    });
   });
   $("#lobbySelfManage")?.addEventListener("click", () => {
     if (!document.body.classList.contains("is-lobby-self") || document.body.classList.contains("is-self-detail")) return;
