@@ -1767,13 +1767,18 @@
       });
 
       window.addEventListener("message", function (event) {
-        if (!event.data || event.data.type !== "aidt-open-eval") return;
+        var nextMenu = {
+          "aidt-open-eval": "menu=eval",
+          "aidt-open-self": "menu=self",
+          "aidt-open-dash": "menu=dash"
+        }[event.data && event.data.type];
+        if (!nextMenu) return;
         var frame = demo.querySelector("iframe");
         if (!frame || event.source !== frame.contentWindow) return;
-        var evalCard = cards.find(function (card) {
-          return (card.getAttribute("data-demo-src") || "").indexOf("menu=eval") !== -1;
+        var nextCard = cards.find(function (card) {
+          return (card.getAttribute("data-demo-src") || "").indexOf(nextMenu) !== -1;
         });
-        if (evalCard) select(evalCard);
+        if (nextCard) select(nextCard);
       });
     })();
   </script>
