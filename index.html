@@ -87,26 +87,73 @@
       font-size: 12px;
       font-weight: 700;
     }
-    .nav {
+    .quick-nav {
+      position: fixed;
+      z-index: 45;
+      right: 14px;
+      top: calc(50% + 24px);
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      width: 96px;
+      padding: 0;
+      border-radius: 28px;
+      background: #fff;
+      border: 1px solid rgba(255, 148, 82, 0.72);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.8) inset,
+        0 10px 26px rgba(255, 122, 48, 0.16),
+        0 2px 8px rgba(40, 48, 70, 0.06);
+      overflow: hidden;
+    }
+    .quick-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 8px 8px;
+      border-radius: 0;
+      color: #3a4358;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.04em;
+      text-align: center;
+      text-decoration: none;
+    }
+    .quick-nav a + a { position: relative; }
+    .quick-nav a + a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 16px;
+      right: 16px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255, 132, 56, 0), rgba(255, 132, 56, 0.85) 14%, rgba(255, 132, 56, 0.85) 86%, rgba(255, 132, 56, 0));
+    }
+    .quick-nav a:hover { background: var(--soft); }
+    .quick-nav a.is-current { background: var(--primary-light); }
+    .quick-ico {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f2f5fa;
+      color: #44506a;
+    }
+    .quick-label {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 6px;
+      justify-content: center;
+      min-height: 2.5em;
     }
-    .nav a {
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--ink);
-      padding: 8px 12px;
-      border-radius: 999px;
+    .quick-nav .is-ask { color: var(--primary-dark); }
+    .quick-nav .is-ask .quick-ico {
+      background: var(--primary);
+      color: #fff;
     }
-    .nav a:hover { background: var(--soft); }
-    .nav .ghost {
-      border: 1px solid var(--line);
-      background: #fff;
-    }
+    .quick-nav .is-top .quick-ico { color: var(--primary); }
 
     .hero {
       position: relative;
@@ -182,6 +229,14 @@
       font-weight: 800;
       letter-spacing: -0.04em;
       line-height: 1.3;
+    }
+    .guide-help {
+      display: block;
+      margin-top: 10px;
+      font-size: clamp(1.35rem, 2.6vw, 2.05rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.45;
     }
     .hero-copy {
       margin: 18px 0 0;
@@ -604,9 +659,7 @@
     .step-card { height: 100%; cursor: pointer; text-align: left; }
     .step-card.is-selected {
       border-color: var(--primary);
-      box-shadow:
-        0 0 0 2px var(--primary),
-        0 12px 28px rgba(52, 120, 246, 0.16);
+      box-shadow: 0 12px 28px rgba(52, 120, 246, 0.16);
     }
     .step-showcase {
       margin-top: 18px;
@@ -975,6 +1028,13 @@
     .copy { margin: 22px 0 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.55); font-size: 12px; }
     .footer-brand { filter: brightness(0) invert(1); width: 150px; }
 
+    @media (max-width: 1440px) {
+      .wrap {
+        width: min(1200px, calc(100% - 150px));
+        margin-left: auto;
+        margin-right: 120px;
+      }
+    }
     @media (max-width: 980px) {
       .hero-grid, .rounds, .steps, .qa-row { grid-template-columns: 1fr; }
       .features { grid-template-columns: 1fr; }
@@ -986,12 +1046,17 @@
       .aidt-tag { left: 12px; font-size: 13px; }
       .brand-banner-title { font-size: 1.95rem; }
       .brand-tag { display: inline-flex; }
-      .site-header .wrap { align-items: flex-start; padding: 12px 0; }
-      .nav a { padding: 6px 8px; font-size: 13px; }
+      .site-header .wrap { padding: 12px 0; }
       .scene { max-width: 420px; }
+      .wrap { width: min(1200px, calc(100% - 16px - 92px)); margin-right: 88px; margin-left: auto; transform: none; }
+      .quick-nav { width: auto; right: 8px; padding: 6px; border-radius: 22px; }
+      .quick-label { display: none; }
+      .quick-nav a { padding: 6px; gap: 0; }
+      .quick-nav a + a::before { left: 8px; right: 8px; }
+      .quick-ico { width: 34px; height: 34px; }
     }
     @media (max-width: 640px) {
-      .wrap { width: min(1200px, calc(100% - 32px)); }
+      .wrap { width: min(1200px, calc(100% - 12px - 92px)); margin-right: 86px; margin-left: auto; transform: none; }
       section { padding: 64px 0; }
       .brand img { width: 124px; }
       .callout { border-radius: 22px; }
@@ -1014,15 +1079,30 @@
         <img src="https://i-screammedia-aidt-free-trial-event.vercel.app/brand/i-scream-media.png?v=3" alt="i-Scream media" />
         <span class="brand-tag">1차 안내</span>
       </a>
-      <nav class="nav" aria-label="사용 안내 메뉴">
-        <a href="#howto">사용 방법</a>
-        <a href="#schedule">이용 일정</a>
-        <a href="#features">수업 기능</a>
-        <a href="#contact">문의</a>
-        <a class="ghost" href="https://i-screammedia-aidt-free-trial-event.vercel.app/" target="_blank" rel="noopener noreferrer">이벤트 페이지</a>
-      </nav>
     </div>
   </header>
+  <nav class="quick-nav" aria-label="사용 안내 메뉴">
+    <a href="#howto" data-spy aria-label="사용 방법">
+      <span class="quick-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 6h11M8 12h11M8 18h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="4.5" cy="6" r="1.25" fill="currentColor"/><circle cx="4.5" cy="12" r="1.25" fill="currentColor"/><circle cx="4.5" cy="18" r="1.25" fill="currentColor"/></svg></span>
+      <span class="quick-label">사용<br />방법</span>
+    </a>
+    <a href="#schedule" data-spy aria-label="이용 일정">
+      <span class="quick-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 3v4M16 3v4M4 10h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      <span class="quick-label">이용<br />일정</span>
+    </a>
+    <a href="#features" data-spy aria-label="주요 기능">
+      <span class="quick-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M10 8.2v4.6l4.2-2.3L10 8.2z" fill="currentColor"/><path d="M8 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      <span class="quick-label">주요<br />기능</span>
+    </a>
+    <a class="is-ask" href="#contact" data-spy aria-label="이용 문의">
+      <span class="quick-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 6.5h14a2 2 0 0 1 2 2v6.2a2 2 0 0 1-2 2H9.2L5 20.2v-3.5H5a2 2 0 0 1-2-2V8.5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+      <span class="quick-label">이용<br />문의</span>
+    </a>
+    <a class="is-top" href="#top" aria-label="TOP">
+      <span class="quick-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 14.5 12 8.5l6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="quick-label">TOP</span>
+    </a>
+  </nav>
 
   <main id="main">
     <section class="hero" id="top">
@@ -1039,6 +1119,7 @@
                 <span class="brand-banner-title">AI 디지털 교육자료(수학)</span>
               </span>
               <span class="guide-label">무료 체험 사용 안내 페이지 입니다.</span>
+              <span class="guide-help">체험 중 문의 사항이나 불편 사항은<br />아래 [이용 문의] 섹션을 이용해주세요.</span>
             </h1>
             <p class="hero-copy">
               신청해 주신 선생님을 위한 안내입니다.<br />
@@ -1223,12 +1304,12 @@
 
     <section class="soft" id="contact">
       <div class="wrap">
-        <p class="eyebrow">관련 문의</p>
+        <p class="eyebrow">이용 문의</p>
         <h2>선생님들의 질문과 답변을 모아두었어요</h2>
         <p class="section-lead">등록하신 문의와 답변은 체험에 참여하는 모든 선생님들과 공유됩니다.<br />단, 교육청, 학교, 아이디, 이름, 연락처 등의 개인정보는 운영팀만 안전하게 확인하며 게시판에 공개되지 않습니다.</p>
         <form class="board-form" id="board-form">
           <h3 class="board-step">01 일반 문의</h3>
-          <p class="board-notice">일반적인 이용 문의는 개인 정보 동의 없이 바로 남기실 수 있습니다.<br />단, 발급된 계정 관련 추가 조치가 필요한 경우, 개인정보 수집에 동의해주셔야 신속한 처리가 가능합니다.</p>
+          <p class="board-notice">일반적인 이용 문의는 개인 정보 동의 없이 바로 남기실 수 있습니다.<br />단, 발급된 계정 관련 추가 조치가 필요한 경우, 개인정보 수집 동의 후, 추가 요청 문의를 남겨주시면, 신속한 처리가 가능합니다.</p>
           <label for="board-question">문의 내용 <span id="question-visibility">문의하신 내용과 답변은 모든 분들과 함께 볼 수 있어요!</span>
             <textarea id="board-question" name="question" maxlength="2000" required placeholder="체험 하시면서 QR 코드, 계정 이용 등 궁금하신 점을 자유롭게 남겨 주세요."></textarea>
           </label>
@@ -1260,7 +1341,7 @@
             <label for="board-name">이름 <span>실명. 이 페이지에는 표시되지 않습니다</span>
               <input id="board-name" name="name" maxlength="30" placeholder="이름" />
             </label>
-            <label for="board-phone">연락처 <span>000-0000-0000, 상품 발송 및 경품 수령을 위한 용도로만 사용됩니다</span>
+            <label for="board-phone">연락처 <span>000-0000-0000, 요청 사항 처리를 위한 용도로만 사용됩니다.</span>
               <input id="board-phone" name="phone" maxlength="20" inputmode="tel" placeholder="000-0000-0000" />
             </label>
             <label for="board-private">비공개 연락처 <span>선택. 운영팀만 확인합니다</span>
@@ -1330,8 +1411,8 @@
         <nav class="footer-links" aria-label="하단 메뉴">
           <a href="#howto">사용 방법</a>
           <a href="#schedule">이용 일정</a>
-          <a href="#features">수업 기능</a>
-          <a href="#contact">문의</a>
+          <a href="#features">주요 기능</a>
+          <a href="#contact">이용 문의</a>
           <a href="https://i-screammedia-aidt-free-trial-event.vercel.app/" target="_blank" rel="noopener noreferrer">이벤트 페이지</a>
         </nav>
       </div>
@@ -1367,8 +1448,8 @@
         title = "1차 무료체험 신청이 곧 시작됩니다.";
         body = "신청은 " + label(round.applyStart) + "부터입니다. 아래 내용들을 확인해 주세요.";
       } else if (today <= round.applyEnd) {
-        title = "지금은 1차 신청 기간입니다.";
-        body = "1차 이용은 " + label(round.useStart) + "부터 " + label(round.useEnd) + "까지입니다.";
+        title = "체험 시작은 11월 23일부터입니다.";
+        body = "";
       } else if (today < round.useStart) {
         title = "체험 시작은 11월 23일부터입니다.";
         body = "";
@@ -1417,7 +1498,7 @@
           document.getElementById(id).required = on;
         });
         visibility.textContent = on
-          ? "문의 내용은 모든 분들과 함께 볼 수 있어요. 개인정보는 운영팀과 확인합니다."
+          ? "문의 내용은 모든 분들과 함께 볼 수 있어요. 개인정보는 운영팀만 확인합니다."
           : "문의하신 내용과 답변은 모든 분들과 함께 볼 수 있어요!";
       }
 
@@ -1780,6 +1861,25 @@
         });
         if (nextCard) select(nextCard);
       });
+    })();
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll(".quick-nav a[data-spy]"));
+      if (!links.length) return;
+      var targets = links.map(function (link) {
+        return document.querySelector(link.getAttribute("href"));
+      });
+      function mark() {
+        var line = window.scrollY + 140;
+        var current = -1;
+        targets.forEach(function (el, index) {
+          if (el && el.offsetTop <= line) current = index;
+        });
+        links.forEach(function (link, index) {
+          link.classList.toggle("is-current", index === current);
+        });
+      }
+      window.addEventListener("scroll", mark, { passive: true });
+      mark();
     })();
   </script>
 </body>
