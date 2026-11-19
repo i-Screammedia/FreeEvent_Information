@@ -594,6 +594,7 @@
       z-index: 1;
       flex: none;
     }
+    .step-link[hidden] { display: none !important; }
     .step-link {
       position: relative;
       display: inline-flex;
@@ -923,6 +924,21 @@
     .board-form textarea { min-height: 120px; }
     .board-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 14px; }
     .form-note { margin: 0; color: var(--primary-dark); font-size: 14px; font-weight: 700; }
+    .board-search {
+      display: flex;
+      gap: 8px;
+      margin-top: 22px;
+    }
+    .board-search input {
+      flex: 1;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 14px;
+      background: var(--soft);
+      color: var(--ink);
+    }
+    .board-search .btn { flex: none; min-height: 48px; }
     .board-list { display: grid; gap: 14px; margin-top: 18px; }
     .board-pages {
       display: flex;
@@ -1175,15 +1191,15 @@
         <h2>선생님은 아이스크림 통합 계정으로, 학생은 QR로</h2>
         <p class="section-lead">학생은 별도의 아이스크림 통합회원 ID와 비밀번호가 필요하지 않습니다.<br />신청하신 학생 수만큼 QR이 선생님 로그인 시 발급됩니다.</p>
         <div class="steps" role="tablist" aria-label="사용 방법">
-          <article class="card step-card step is-selected" role="tab" tabindex="0" aria-selected="true" data-copy="300 학급에게만 특별히 열어드리는 '사전 체험 전용 독립 서버(Stage)'입니다.&#10;본 서버에서 빠르고 쾌적하게 AIDT 신기능을 마음껏 테스트해 보세요!" data-images="홈화면01.png|홈화면02.png" data-alts="AI 디지털 교육자료 홈 화면 1|AI 디지털 교육자료 홈 화면 2">
+          <article class="card step-card step is-selected" role="tab" tabindex="0" aria-selected="true" data-copy="선생님은 아이스크림 통합계정으로 로그인합니다.&#10;무료체험은 통합계정당 1회, 실제 담당 학급 1개만 이용할 수 있습니다." data-images="login.png" data-alts="선생님 아이스크림 통합계정 로그인 화면" data-login-hint="true">
             <span class="step-no">01</span>
-            <h3>AI 디지털 교육자료 접속</h3>
-          </article>
-          <article class="card step-card step" role="tab" tabindex="0" aria-selected="false" data-copy="선생님은 아이스크림 통합계정으로 로그인합니다.&#10;무료체험은 통합계정당 1회, 실제 담당 학급 1개만 이용할 수 있습니다." data-images="login.png" data-alts="선생님 아이스크림 통합계정 로그인 화면" data-login-hint="true">
-            <span class="step-no">02</span>
             <h3>선생님 로그인</h3>
           </article>
-          <article class="card step-card step" role="tab" tabindex="0" aria-selected="false" data-copy="이용 기간에 로그인하면 신청하신 학생 수에 맞게 학생 QR이 발급됩니다. 한 학급당 최대 30명입니다." data-images="QR발급01.png|QR발급_확대.png" data-alts="학생별 자동 로그인 QR 발급 안내|학생 QR 카드와 확대 화면">
+          <article class="card step-card step" role="tab" tabindex="0" aria-selected="false" data-copy="300 학급에게만 특별히 열어드리는 '사전 체험 전용 독립 서버(Stage)'입니다.&#10;본 서버에서 빠르고 쾌적하게 AIDT 신기능을 마음껏 테스트해 보세요!" data-images="홈화면01.png|홈화면02.png" data-alts="AI 디지털 교육자료 홈 화면 1|AI 디지털 교육자료 홈 화면 2" data-server="true" data-title="AI 디지털 교육자료 접속 화면입니다.">
+            <span class="step-no">02</span>
+            <h3>AI 디지털 교육자료 접속</h3>
+          </article>
+          <article class="card step-card step" role="tab" tabindex="0" aria-selected="false" data-copy="이용 기간에 로그인하면 신청하신 학생 수에 맞게 학생 QR이 발급됩니다. 한 학급당 최대 30명입니다." data-images="QR발급01.png|QR발급_확대.png" data-alts="학생별 자동 로그인 QR 발급 안내|학생 QR 카드와 확대 화면" data-qr-hint="true">
             <span class="step-no">03</span>
             <h3>학생 QR 확인</h3>
           </article>
@@ -1196,20 +1212,20 @@
           <div class="step-panel" id="step-panel" role="tabpanel">
             <div class="step-panel-head">
               <div class="step-panel-text">
-                <h3 id="step-panel-title">AI 디지털 교육자료 접속</h3>
-                <p id="step-panel-copy">300 학급에게만 특별히 열어드리는 '사전 체험 전용 독립 서버(Stage)'입니다.<br />본 서버에서 빠르고 쾌적하게 AIDT 신기능을 마음껏 테스트해 보세요!</p>
-                <p class="step-cta-hint" id="step-cta-hint">우측 바로 체험하기 버튼을 클릭하세요</p>
-                <p class="step-cta-hint" id="step-login-hint" hidden>선생님의 아이스크림 통합 계정을 사용하세요.</p>
+                <h3 id="step-panel-title">선생님 로그인</h3>
+                <p id="step-panel-copy">선생님은 아이스크림 통합계정으로 로그인합니다.<br />무료체험은 통합계정당 1회, 실제 담당 학급 1개만 이용할 수 있습니다.</p>
+                <p class="step-cta-hint" id="step-cta-hint" hidden>우측 바로 체험하기 버튼을 클릭하세요</p>
+                <p class="step-cta-hint" id="step-login-hint">선생님의 아이스크림 통합 계정을 사용하세요.</p>
                 <p class="step-cta-hint" id="step-qr-hint" hidden>QR 코드를 인쇄해 학생들에게 나누어 주세요.</p>
               </div>
-              <a class="step-link" id="step-server-link" href="https://stage-math.smart-aidt.com" target="_blank" rel="noopener noreferrer"><span class="step-link-label">바로 체험하기</span><span class="spark spark-a" aria-hidden="true"></span><span class="spark spark-b" aria-hidden="true"></span></a>
+              <a class="step-link" id="step-server-link" href="https://stage-math.smart-aidt.com" target="_blank" rel="noopener noreferrer" hidden><span class="step-link-label">바로 체험하기</span><span class="spark spark-a" aria-hidden="true"></span><span class="spark spark-b" aria-hidden="true"></span></a>
             </div>
           </div>
           <div class="step-stage">
             <div class="shot-frame" id="shot-frame">
-              <img id="step-shot" src="홈화면01.png" alt="AI 디지털 교육자료 홈 화면 1" />
-              <p class="field-hint field-id" id="field-id" hidden>선생님의 아이스크림 통합 계정 아이디를 입력하세요</p>
-              <p class="field-hint field-pw" id="field-pw" hidden>선생님의 아이스크림 통합 계정 비밀번호를 입력하세요</p>
+              <img id="step-shot" src="login.png" alt="선생님 아이스크림 통합계정 로그인 화면" />
+              <p class="field-hint field-id" id="field-id">선생님의 아이스크림 통합 계정 아이디를 입력하세요</p>
+              <p class="field-hint field-pw" id="field-pw">선생님의 아이스크림 통합 계정 비밀번호를 입력하세요</p>
             </div>
             <button class="shot-nav shot-prev" type="button" aria-label="이전 이미지">‹</button>
             <button class="shot-nav shot-next" type="button" aria-label="다음 이미지">›</button>
@@ -1314,19 +1330,19 @@
             <textarea id="board-question" name="question" maxlength="2000" required placeholder="체험 하시면서 QR 코드, 계정 이용 등 궁금하신 점을 자유롭게 남겨 주세요."></textarea>
           </label>
           <h3 class="board-step">02 추가 요청 문의</h3>
-          <p class="board-notice">일반 문의 외에, 발급된 계정 관련 조치가 필요한 경우 아래 체크 박스 클릭 후, 추가 정보를 입력해 주세요.</p>
+          <p class="board-notice">일반 문의 외에, 발급된 계정 관련 조치가 필요한 경우 아래 체크 박스 클릭 후, 추가 정보를 입력해 주세요.<br />계정 발급 확인이나 별도 조치가 필요한 경우만 체크 후 아래 정보를 입력해 주세요.</p>
           <details class="privacy">
             <summary>개인정보 수집·이용 안내 전문 보기</summary>
             <div class="privacy-body">
               <p class="privacy-mark">※ 개인정보 수집·이용 안내</p>
               <p>아이스크림 AI 디지털 교육자료 무료 체험 기간 중 문의 사항에 대해 조치를 취하기 위해 개인정보(소속 교육청, 학교명, 이름, 연락처)를 수집·이용합니다.</p>
-              <p>수집된 개인정보는 이벤트 운영, 본인 확인, 중복 참여 방지 목적으로만 이용되며 이벤트 종료 및 목적 달성 시 즉시 파기합니다.</p>
+              <p>수집된 개인정보는 무료 체험 운영, 본인 확인, 중복 참여 방지 목적으로만 이용되며 무료 체험 종료 및 목적 달성 시 즉시 파기합니다.</p>
               <p class="privacy-mark">※ 개인정보 수집·이용 및 제3자 제공에 동의를 거부할 권리가 있으나 동의하지 않을 경우 관련 문의 처리가 제한될 수 있습니다.</p>
             </div>
           </details>
           <label class="consent" for="board-agree">
             <input id="board-agree" name="agree" type="checkbox" />
-            [계정 오류 조치 및 지원 요청] 계정 발급 확인이나 별도 조치가 필요한 경우만 체크 후 아래 정보를 입력해 주세요.
+            [계정 오류 조치 및 지원 요청] 계정 발급 확인이나 별도 조치를 위한 정보 제공에 동의합니다.
           </label>
           <fieldset class="account-fields" id="account-fields" hidden disabled>
             <label for="board-office">소속 교육청
@@ -1335,8 +1351,8 @@
             <label for="board-school">소속 학교
               <input id="board-school" name="school" maxlength="80" placeholder="소속 학교" />
             </label>
-            <label for="board-account">아이스크림 S 계정 <span>운영팀만 확인합니다</span>
-              <input id="board-account" name="sAccount" maxlength="80" placeholder="아이스크림 S 계정" />
+            <label for="board-account">아이스크림 통합계정 ID <span>요청 사항 처리를 위한 용도로만 사용됩니다.</span>
+              <input id="board-account" name="sAccount" maxlength="80" placeholder="아이스크림 통합계정 ID" />
             </label>
             <label for="board-name">이름 <span>실명. 이 페이지에는 표시되지 않습니다</span>
               <input id="board-name" name="name" maxlength="30" placeholder="이름" />
@@ -1344,8 +1360,8 @@
             <label for="board-phone">연락처 <span>000-0000-0000, 요청 사항 처리를 위한 용도로만 사용됩니다.</span>
               <input id="board-phone" name="phone" maxlength="20" inputmode="tel" placeholder="000-0000-0000" />
             </label>
-            <label for="board-private">비공개 연락처 <span>선택. 운영팀만 확인합니다</span>
-              <input id="board-private" name="privateNote" maxlength="500" placeholder="학교, 메일, 전화번호. 운영팀만 확인합니다." />
+            <label for="board-private">비공개 연락처 <span>Email 필수. 운영팀만 확인합니다.</span>
+              <input id="board-private" name="privateNote" type="email" maxlength="500" placeholder="이메일을 입력해주세요." />
             </label>
           </fieldset>
           <div class="board-actions">
@@ -1354,6 +1370,10 @@
           </div>
         </form>
         <p class="board-error" id="board-error" hidden></p>
+        <form class="board-search" id="board-search" role="search">
+          <input id="board-query" type="search" placeholder="문의나 답변 내용을 검색해 주세요." aria-label="문의 검색" />
+          <button class="btn" type="submit">검색</button>
+        </form>
         <div class="board-list" id="board-list" aria-live="polite"></div>
         <nav class="board-pages" id="board-pages" aria-label="문의 페이지" hidden></nav>
         <button class="admin-toggle" type="button" id="admin-toggle">운영팀 답변 작성</button>
@@ -1478,13 +1498,16 @@
       var visibility = document.getElementById("question-visibility");
       var endpoint = "https://docs.google.com/forms/d/e/1FAIpQLSdEWsLKxfxrWHTiEz6OHkK_KbY3RAMnVdDTn_3SZEiRmNnRIA/formResponse";
       var boardUrl = "https://script.google.com/macros/s/AKfycbzB9KVsUWC2oTBZ_7abbbpiZ_PsjnrZwkWx5Hy6TJpzj_1GT47lYVJuc51vCB_xBjlO/exec";
-      var accountFields = ["board-office", "board-school", "board-account", "board-name", "board-phone"];
+      var accountFields = ["board-office", "board-school", "board-account", "board-name", "board-phone", "board-private"];
       var posts = [];
       var adminPassword = "";
       var lastJson = "";
       var page = 0;
       var pageSize = 10;
+      var query = "";
       var pager = document.getElementById("board-pages");
+      var searchForm = document.getElementById("board-search");
+      var queryInput = document.getElementById("board-query");
 
       function fieldValue(id) {
         return document.getElementById(id).value.trim();
@@ -1529,13 +1552,22 @@
         return wrap;
       }
 
+      function visiblePosts() {
+        var keyword = query.toLowerCase();
+        if (!keyword) return posts;
+        return posts.filter(function (post) {
+          return ((post.question || "") + "\n" + (post.answer || "")).toLowerCase().indexOf(keyword) !== -1;
+        });
+      }
+
       function pageCount() {
-        return Math.max(1, Math.ceil(posts.length / pageSize));
+        return Math.max(1, Math.ceil(visiblePosts().length / pageSize));
       }
 
       function drawPager() {
+        var shown = visiblePosts();
         pager.innerHTML = "";
-        pager.hidden = posts.length <= pageSize;
+        pager.hidden = shown.length <= pageSize;
         if (pager.hidden) return;
         var total = pageCount();
         var start = Math.max(0, Math.min(page - 2, total - 5));
@@ -1558,18 +1590,21 @@
       }
 
       function draw() {
+        var shown = visiblePosts();
         if (page > pageCount() - 1) page = pageCount() - 1;
         if (page < 0) page = 0;
         list.innerHTML = "";
-        if (!posts.length) {
+        if (!shown.length) {
           var empty = document.createElement("p");
           empty.className = "board-empty";
-          empty.textContent = "아직 남겨진 일반 문의가 없습니다.";
+          empty.textContent = posts.length
+            ? "검색한 내용이 담긴 문의가 없습니다."
+            : "아직 남겨진 일반 문의가 없습니다.";
           list.appendChild(empty);
           drawPager();
           return;
         }
-        posts.slice(page * pageSize, page * pageSize + pageSize).forEach(function (post) {
+        shown.slice(page * pageSize, page * pageSize + pageSize).forEach(function (post) {
           var card = document.createElement("article");
           card.className = "qa";
           var time = document.createElement("time");
@@ -1698,14 +1733,41 @@
       });
       adminBar.addEventListener("submit", function (event) {
         event.preventDefault();
-        adminPassword = document.getElementById("admin-password").value;
-        if (!adminPassword) {
+        var entered = document.getElementById("admin-password").value;
+        if (!entered) {
           note.textContent = "답변 비밀번호를 입력해 주세요.";
           return;
         }
-        note.textContent = "답변 작성 화면입니다. 답변 등록 때 비밀번호를 확인합니다.";
-        draw();
+        note.textContent = "비밀번호를 확인하고 있습니다.";
+        sendJson({ id: "password-check-only", answer: "확인", password: entered }).then(function () {
+          adminPassword = "";
+          note.textContent = "비밀번호를 확인하지 못했습니다.";
+          draw();
+        }).catch(function (err) {
+          if (err && err.message === "문의를 찾지 못했습니다.") {
+            adminPassword = entered;
+            note.textContent = "비밀번호가 확인되었습니다. 답변을 작성해 주세요.";
+            draw();
+            return;
+          }
+          adminPassword = "";
+          note.textContent = (err && err.message) || "비밀번호가 맞지 않습니다.";
+          draw();
+        });
       });
+
+      function applyQuery() {
+        var next = queryInput.value.trim();
+        if (next === query) return;
+        query = next;
+        page = 0;
+        draw();
+      }
+      searchForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        applyQuery();
+      });
+      queryInput.addEventListener("input", applyQuery);
 
       load();
       setInterval(load, 15000);
@@ -1734,12 +1796,13 @@
         var alts = list(card, "data-alts");
         if (!images.length) return;
         if (imageIndex >= images.length) imageIndex = 0;
-        title.textContent = card.querySelector("h3").textContent;
+        title.textContent = card.getAttribute("data-title") || card.querySelector("h3").textContent;
         copy.textContent = card.getAttribute("data-copy") || "";
-        serverLink.hidden = card !== cards[0];
-        document.getElementById("step-cta-hint").hidden = card !== cards[0];
-        document.getElementById("step-login-hint").hidden = card !== cards[1];
-        document.getElementById("step-qr-hint").hidden = card !== cards[2];
+        var isServer = card.getAttribute("data-server") === "true";
+        serverLink.hidden = !isServer;
+        document.getElementById("step-cta-hint").hidden = !isServer;
+        document.getElementById("step-login-hint").hidden = card.getAttribute("data-login-hint") !== "true";
+        document.getElementById("step-qr-hint").hidden = card.getAttribute("data-qr-hint") !== "true";
         shot.src = images[imageIndex];
         shot.alt = alts[imageIndex] || title.textContent;
         if (shot.complete) fitShot();
