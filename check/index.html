@@ -347,6 +347,13 @@
 
     .result.is-error .result-title { color: #b42318; }
 
+    .result-note a {
+      color: var(--primary-dark);
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
     .btn-server {
       display: inline-flex;
       align-items: center;
@@ -678,6 +685,22 @@
         note.textContent = "";
       }
 
+      function showNotFound() {
+        clearActions();
+        title.textContent = "등록된 체험 명단에서 이 아이디를 찾지 못했습니다.";
+        period.textContent = "";
+        note.hidden = false;
+        note.appendChild(document.createTextNode("아이디를 다시 확인해 주세요."));
+        note.appendChild(document.createElement("br"));
+        note.appendChild(document.createTextNode("명단 확인 관련 문의는 "));
+        var mail = document.createElement("a");
+        mail.href = "mailto:aidt@i-screammedia.com";
+        mail.textContent = "aidt@i-screammedia.com";
+        note.appendChild(mail);
+        note.appendChild(document.createTextNode(" 으로 문의해 주세요."));
+        showResult(true);
+      }
+
       function showMessage(isError, titleText, noteText) {
         clearActions();
         title.textContent = titleText;
@@ -693,7 +716,7 @@
         var cohort = COHORTS[key];
         clearActions();
         if (!cohort) {
-          showMessage(true, "등록된 체험 명단에서 이 아이디를 찾지 못했습니다.", "아이디를 다시 확인해 주세요.");
+          showNotFound();
           return;
         }
         title.textContent = "선생님은 " + cohort.label + "입니다.";
@@ -734,7 +757,7 @@
           })
           .then(function (data) {
             if (!data || !data.ok || !COHORTS[data.cohort]) {
-              showMessage(true, "등록된 체험 명단에서 이 아이디를 찾지 못했습니다.", "아이디를 다시 확인해 주세요.");
+              showNotFound();
               return;
             }
             showCohort(data.cohort);
