@@ -400,6 +400,34 @@
       height: auto;
     }
 
+    .earlybird {
+      position: relative;
+    }
+
+    .earlybird img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 28px;
+    }
+
+    .earlybird-link {
+      position: absolute;
+      left: 8%;
+      top: 74%;
+      width: 24%;
+      height: 14%;
+      border-radius: 999px;
+      color: transparent;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .earlybird-link:focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 3px;
+    }
+
     .site-footer {
       background: var(--ink);
       color: #fff;
@@ -564,9 +592,9 @@
 
     <section id="notice" aria-labelledby="notice-title">
       <p class="section-label">전용 안내</p>
-      <h2 id="notice-title">선정된 학급만을 위한 전용 공지 채팅서버</h2>
+      <h2 id="notice-title">선정된 학급만을 위한 전용 공지 오픈채팅방</h2>
       <p class="notice-body">
-        체험 기간 동안 빠른 안내를 위해, 체험 학급 선생님들만을 위한 카카오톡 오픈채팅방을 열었습니다.
+        체험 기간 동안 빠른 안내를 위해, 체험 학급 선생님들만을 위한 카카오톡 오픈채팅방을 열었습니다.<br />
         (소통방이 아닌 관리자만 채팅으로 안내하는 공간입니다.)
       </p>
       <div class="qr-block">
@@ -576,6 +604,11 @@
         <strong>이벤트 안내 오픈카톡방에<br />입장해주세요!</strong>
         <small>이벤트와 관련해 접속 방법을 안내드리는 카톡방입니다.</small>
       </div>
+    </section>
+
+    <section id="earlybird" class="earlybird" aria-label="얼리버드 이벤트">
+      <img src="earlybird.png" alt="2027년 신학기 얼리버드 이벤트. 오픈예정. 이벤트 기간 2026년 12월 21일부터 2027년 1월 31일." />
+      <a class="earlybird-link" href="https://aidt.i-scream.co.kr/customer/notice/20" target="_blank" rel="noopener noreferrer">얼리버드 신청 살펴보기</a>
     </section>
   </div>
 
@@ -591,6 +624,7 @@
         <nav class="footer-links" aria-label="하단 메뉴">
           <a href="#check">체험 차수 확인</a>
           <a href="#notice">오픈카톡</a>
+          <a href="#earlybird">얼리버드</a>
         </nav>
       </div>
       <p class="copy">ⓒ i-Scream Media Corporation. All rights reserved.</p>
