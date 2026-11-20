@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI 디지털 교육자료 사전 체험단 | 아이스크림미디어</title>
+  <title>AI 디지털 교육자료 무료 체험단 | 아이스크림미디어</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <style>
     :root {
@@ -254,6 +254,11 @@
       margin-top: 0.55rem;
       color: var(--muted);
       font-size: 0.98rem;
+    }
+
+    .notice-admin {
+      color: #e03131;
+      font-weight: 700;
     }
 
     .id-panel {
@@ -539,18 +544,18 @@
         alt="아이스크림미디어"
       />
 
-      <p class="hero__kicker">선생님, AI 디지털 교육자료 사전 체험단</p>
+      <p class="hero__kicker">선생님, AI 디지털 교육자료 무료 체험단</p>
       <h1 class="hero__title">
         선정을 축하합니다!
-        <em>사전 체험단 EVENT</em>
+        <em>무료 사용 체험 EVENT</em>
       </h1>
-      <span class="hero__badge">구)AIDT</span>
+      <span class="hero__badge">구) AIDT</span>
 
       <aside class="congrats" aria-label="선정 축하 안내">
         <span class="congrats__icon" aria-hidden="true">🎉</span>
         <p class="congrats__text">
           <span>1주일 만에 300학급 조기 마감!</span>
-          선생님, AI 디지털 교육자료 사전 체험단 선정을 축하합니다.
+          선생님, AI 디지털 교육자료 무료 체험단 선정을 축하합니다.
         </p>
       </aside>
 
@@ -578,15 +583,15 @@
     <section id="check" aria-labelledby="check-title">
       <p class="section-label">체험 안내</p>
       <h2 id="check-title">내 체험 차수 확인 및 전용 서버 입장</h2>
-      <p class="lead">선생님의 아이스크림 ID를 입력하고 배정된 일정을 확인하세요.</p>
+      <p class="lead">선생님의 아이스크림 통합계정 ID를 입력하고 배정된 일정을 확인하세요.</p>
 
       <div class="id-panel">
         <form class="id-row" id="id-form" autocomplete="off">
-          <label for="ice-id" class="visually-hidden">아이스크림 ID</label>
-          <input id="ice-id" name="ice-id" type="text" placeholder="아이스크림 ID" required />
+          <label for="ice-id" class="visually-hidden">아이스크림 통합계정 ID</label>
+          <input id="ice-id" name="ice-id" type="text" placeholder="아이스크림 통합계정 ID" required />
           <button type="submit" class="btn-check">확인하기</button>
         </form>
-        <p class="id-hint">신청하신 아이스크림 ID를 입력해 주세요.</p>
+        <p class="id-hint">신청하신 아이스크림 통합계정 ID를 입력해 주세요.</p>
 
         <div class="result" id="result" role="status" aria-live="polite" hidden>
           <p class="result-title" id="result-title"></p>
@@ -602,7 +607,7 @@
       <h2 id="notice-title">선정된 학급만을 위한 전용 공지 오픈채팅방</h2>
       <p class="notice-body">
         체험 기간 동안 빠른 안내를 위해, 체험 학급 선생님들만을 위한 카카오톡 오픈채팅방을 열었습니다.<br />
-        (소통방이 아닌 관리자만 채팅으로 안내하는 공간입니다.)
+        <span class="notice-admin">(소통방이 아닌 관리자만 채팅으로 안내하는 공간입니다.)</span>
       </p>
       <div class="qr-block">
         <div class="qr-slot">
