@@ -50,6 +50,17 @@
       border-radius: 999px;
     }
     .skip:focus { top: 12px; }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
 
     .wrap {
       width: min(1200px, calc(100% - 40px));
@@ -159,181 +170,282 @@
       position: relative;
       overflow: hidden;
       background: var(--hero);
-      padding: 36px 0 28px;
+      padding: 2rem 0 2.5rem;
     }
-    .blob {
+    .hero__blob {
+      pointer-events: none;
       position: absolute;
       border-radius: 50%;
-      pointer-events: none;
     }
-    .blob-a { left: -80px; top: 64px; width: 256px; height: 256px; background: #d9e8ff; }
-    .blob-b { right: -40px; top: 34%; width: 280px; height: 280px; background: rgba(255, 228, 92, 0.8); }
-    .blob-c { left: 46%; bottom: 0; width: 160px; height: 160px; background: var(--accent-mint); }
-    .hero-grid {
+    .hero__blob--a { left: -5rem; top: 4rem; width: 16rem; height: 16rem; background: #d9e8ff; }
+    .hero__blob--b { right: -2.5rem; top: 34%; width: 18rem; height: 18rem; background: rgba(255, 228, 92, 0.8); }
+    .hero__blob--c { left: 50%; bottom: 0; width: 10rem; height: 10rem; transform: translateX(-50%); background: var(--accent-mint); }
+    .hero__inner {
       position: relative;
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 40px;
-      align-items: center;
+      z-index: 1;
+      width: min(720px, calc(100% - 40px));
+      margin: 0 auto;
+      padding-top: 0.5rem;
     }
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(1.7rem, 3vw, 2.7rem);
-      line-height: 1.2;
-      letter-spacing: -0.035em;
-    }
-    .hero h1 .lead {
-      display: block;
-      font-size: clamp(1.15rem, 2vw, 1.7rem);
-      line-height: 1.35;
-    }
-    .brand-banner {
-      position: relative;
-      display: block;
-      width: fit-content;
-      max-width: 100%;
-      margin-top: 28px;
-      padding: 20px 28px 16px;
-      border-radius: 999px;
-      background: #ff6a00;
-    }
-    .brand-banner-title {
-      display: block;
-      color: #fff;
-      font-size: clamp(2.175rem, 4.5vw, 3.225rem);
-      font-weight: 900;
-      letter-spacing: -0.045em;
-      line-height: 1.15;
-      text-align: center;
-    }
-    .aidt-tag {
-      position: absolute;
-      left: 22px;
-      top: -15px;
-      transform: rotate(-10deg);
-      border: 3px solid #fff;
-      border-radius: 999px;
-      background: #2f7cf6;
-      color: #fff;
-      padding: 7px 14px;
-      font-size: 15px;
-      font-weight: 800;
-      line-height: 1;
+    .hero__kicker {
+      margin: 0.35rem 0 0;
+      font-size: clamp(1.05rem, 3.2vw, 1.35rem);
+      font-weight: 700;
       letter-spacing: -0.03em;
-      box-shadow: 0 8px 16px rgba(32, 90, 180, 0.28);
-    }
-    .guide-label {
-      display: block;
-      margin-top: 16px;
-      font-size: clamp(1.35rem, 2.6vw, 2.05rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1.3;
-    }
-    .guide-help {
-      display: block;
-      margin-top: 10px;
-      font-size: clamp(1.35rem, 2.6vw, 2.05rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
       line-height: 1.45;
+      animation: fadeUp 0.65s ease 0.06s both;
     }
-    .hero-copy {
-      margin: 18px 0 0;
-      max-width: 560px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.75;
+    .aidt-mark {
+      position: relative;
+      display: inline-block;
+      margin-top: 1.15rem;
     }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; list-style: none; padding: 0; }
-    .chips li {
+    .hero__title {
+      margin: 0.35rem 0 0;
+      font-size: clamp(1.75rem, 6vw, 2.55rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.2;
+      color: var(--primary);
+      animation: fadeUp 0.65s ease 0.12s both;
+    }
+    .hero__title em {
+      font-style: normal;
+      color: var(--ink);
+      display: block;
+    }
+    .hero__badge {
+      position: absolute;
+      left: 0;
+      top: -1.05rem;
+      z-index: 2;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid #fff;
-      background: rgba(255, 255, 255, 0.86);
-      box-shadow: 0 4px 14px rgba(52, 84, 150, 0.06);
-      font-size: 14px;
-      font-weight: 700;
+      padding: 0.16rem 0.42rem 0.18rem;
+      border: 2px solid #fff;
+      border-radius: 7px;
+      background: #2f6fe4;
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      white-space: nowrap;
+      transform: rotate(-11deg);
+      box-shadow: 0 5px 12px rgba(47, 111, 228, 0.28);
     }
-    .chips svg { color: var(--primary); flex: none; }
-    .status {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      margin-top: 18px;
-      padding: 14px 16px;
+    .hero__guide {
+      margin: 1.05rem 0 0;
+      color: var(--ink);
+      font-size: clamp(1.02rem, 2.4vw, 1.18rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.65;
+      animation: fadeUp 0.65s ease 0.2s both;
+    }
+    .hero__guide a,
+    .hero__guide-list a {
+      color: var(--primary);
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .hero__guide a:hover,
+    .hero__guide-list a:hover { text-decoration: underline; }
+    .hero__guide-list .guide-bracket {
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .hero__guide-emph {
+      margin: 0.85rem 0 0;
+      padding: 0.85rem 1rem;
+      border: 1px solid #d5e4ff;
       border-radius: 18px;
       background: #fff;
-      border: 1px solid #fff;
-      box-shadow: var(--shadow);
-      max-width: 560px;
+      color: var(--ink);
+      font-size: clamp(0.98rem, 2.2vw, 1.08rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.85;
+      box-shadow: 0 10px 24px rgba(52, 120, 246, 0.08);
+      animation: fadeUp 0.65s ease 0.22s both;
     }
-    .status strong { display: block; font-size: 30px; line-height: 1.35; letter-spacing: -0.03em; }
-    .status p { margin: 4px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55; white-space: pre-line; }
-    .status-dot {
-      width: 14px;
-      height: 14px;
-      margin-top: 12px;
-      border-radius: 50%;
-      background: #ff2a2a;
-      flex: none;
-      animation: status-blink 1.15s ease-in-out infinite;
+    .hero__guide-emph a {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 0.12rem;
+      padding: 0.12rem 0.62rem 0.16rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.92em;
+      font-weight: 800;
+      line-height: 1.2;
+      text-decoration: none;
+      vertical-align: 0.06em;
+      box-shadow: 0 4px 10px rgba(52, 120, 246, 0.22);
     }
-    @keyframes status-blink {
-      0%, 100% {
-        background: #ff5a5a;
-        box-shadow:
-          0 0 0 0 rgba(255, 40, 40, 0.15),
-          0 0 8px 2px rgba(255, 70, 70, 0.35);
-        opacity: 0.72;
-      }
-      50% {
-        background: #ff1414;
-        box-shadow:
-          0 0 0 8px rgba(255, 45, 45, 0.28),
-          0 0 22px 8px rgba(255, 30, 30, 0.95),
-          0 0 40px 14px rgba(255, 90, 90, 0.65);
-        opacity: 1;
-      }
+    .hero__guide-emph a:hover { background: var(--primary-dark); }
+    .hero__guide-list {
+      margin: 0.7rem 0 0;
+      padding: 0;
+      list-style: none;
+      color: var(--ink);
+      font-size: clamp(0.98rem, 2.2vw, 1.08rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.55;
+      animation: fadeUp 0.65s ease 0.24s both;
     }
-
-    .scene {
+    .hero__guide-list li {
       position: relative;
-      aspect-ratio: 100 / 96;
-      max-width: 540px;
-      margin: 0 auto;
-      background-image: radial-gradient(circle, rgba(52, 120, 246, 0.28) 1.3px, transparent 1.5px);
-      background-size: 26px 26px;
+      margin-top: 0.4rem;
+      padding-left: 0.85rem;
     }
-    .scene img.people {
+    .hero__guide-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+    }
+    .congrats {
+      margin-top: 1.35rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 1.1rem 1.2rem;
+      border-radius: 28px;
+      background: var(--accent-yellow);
+      box-shadow: 0 14px 32px rgba(255, 196, 61, 0.35);
+      animation: fadeUp 0.7s ease 0.22s both;
+    }
+    .congrats__icon { flex: none; font-size: 1.65rem; line-height: 1; }
+    .congrats__text {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.5;
+    }
+    .congrats__text span { display: block; margin-bottom: 0.15rem; }
+    .hero__scene {
+      position: relative;
+      height: 15.5rem;
+      margin-top: 1.75rem;
+    }
+    .hero__scene-dots {
+      position: absolute;
+      inset: 8% 6% 12%;
+      background-image: radial-gradient(circle, rgba(52, 120, 246, 0.28) 1.4px, transparent 1.5px);
+      background-size: 16px 16px;
+      -webkit-mask-image: radial-gradient(ellipse at center, #000 35%, transparent 72%);
+      mask-image: radial-gradient(ellipse at center, #000 35%, transparent 72%);
+    }
+    .hero__people {
       position: absolute;
       left: 50%;
       bottom: 0;
-      width: 86%;
+      width: min(26rem, 88%);
+      height: auto;
       transform: translateX(-50%);
-      z-index: 3;
-      filter: drop-shadow(0 18px 18px rgba(70, 84, 150, 0.16));
     }
-    .float {
+    .float-deco {
       position: absolute;
-      z-index: 2;
-      filter: drop-shadow(0 14px 12px rgba(70, 84, 150, 0.22));
-      animation: bob 7s ease-in-out infinite;
+      z-index: 1;
+      animation: bob 3.4s ease-in-out infinite;
     }
-    .float img { width: 100%; height: auto; }
-    .f1 { left: 2%; top: 2%; width: 18%; }
-    .f2 { left: 30%; top: 0; width: 14%; animation-delay: -1.2s; }
-    .f3 { left: 50%; top: 10%; width: 22%; animation-delay: -2.3s; }
-    .f4 { right: 4%; top: 1%; width: 12%; animation-delay: -3.2s; }
-    .f5 { right: 2%; top: 22%; width: 12%; animation-delay: -0.6s; }
-    .f6 { right: 20%; top: 30%; width: 10%; animation-delay: -1.8s; }
-    .f7 { left: 0; top: 26%; width: 15%; animation-delay: -2.8s; }
+    .float-deco img { display: block; width: 100%; height: auto; }
+    .float-deco--1 { width: 4.2rem; left: 6%; top: 8%; }
+    .float-deco--2 { width: 3.4rem; right: 10%; top: 16%; animation-delay: 0.45s; }
+    .float-deco--3 { width: 2.8rem; right: 22%; bottom: 14%; animation-delay: 0.9s; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     @keyframes bob {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      0%, 100% { transform: translate3d(0, 0, 0); }
+      50% { transform: translate3d(0, -10px, 0); }
+    }
+    .cohort-label {
+      display: inline-flex;
+      margin: 0 0 8px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .cohort-lead {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .id-panel {
+      margin-top: 22px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .id-row { display: flex; gap: 10px; }
+    .id-row input {
+      flex: 1;
+      min-width: 0;
+      height: 52px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--soft);
+      color: var(--ink);
+      font: inherit;
+      font-weight: 600;
+    }
+    .id-row input:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+      background: #fff;
+    }
+    .btn-check,
+    .btn-server {
+      border: 0;
+      border-radius: 14px;
+      background: var(--primary);
+      color: #fff;
+      font: inherit;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(52, 120, 246, 0.35);
+    }
+    .btn-check { flex: none; height: 52px; padding: 0 22px; }
+    .btn-check:hover,
+    .btn-server:hover { background: var(--primary-dark); }
+    .btn-check:disabled { opacity: 0.7; cursor: default; }
+    .id-hint { margin: 12px 0 0; color: var(--muted); font-size: 13px; }
+    .cohort-result {
+      display: none;
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: var(--primary-light);
+    }
+    .cohort-result.is-visible { display: block; }
+    .cohort-result.is-error { background: #fff4f2; }
+    .cohort-result[hidden],
+    .result-note[hidden],
+    .btn-server[hidden] { display: none !important; }
+    .result-title { margin: 0; font-size: 17px; font-weight: 800; letter-spacing: -0.03em; }
+    .result-period,
+    .result-note { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+    .cohort-result.is-error .result-title { color: #b42318; }
+    .result-note a { color: var(--primary-dark); font-weight: 800; }
+    .btn-server {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 14px;
+      padding: 12px 16px;
+      text-decoration: none;
     }
 
     .prize {
@@ -484,20 +596,35 @@
     .bar.show { color: #fff; overflow: visible; position: relative; z-index: 1; }
     .bar.apply { background: #8ebcff; }
     .bar.use { background: #2f6bff; }
+    .bar.apply2 { background: #ffb067; }
+    .bar.use2 { background: #e8590c; }
+    .bar.apply2.show { color: #7c2d12; }
+    .bar.slot { background: transparent; }
     .bar.start { border-radius: 999px 0 0 999px; margin-left: 8px; }
     .bar.end { border-radius: 0 999px 999px 0; margin-right: 8px; }
     .bar.start.end { border-radius: 999px; }
-    .issue {
-      display: inline-flex;
-      align-self: center;
-      margin-top: 8px;
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: #ffe14a;
-      color: #202638;
-      font-size: 12px;
+    .cal-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      margin: 0 0 18px;
+      padding: 0;
+      list-style: none;
+      color: #3d4d6b;
+      font-size: 13px;
       font-weight: 800;
     }
+    .cal-legend li { display: inline-flex; align-items: center; gap: 6px; }
+    .cal-legend i {
+      width: 18px;
+      height: 10px;
+      border-radius: 999px;
+    }
+    .cal-legend .apply { background: #8ebcff; }
+    .cal-legend .use { background: #2f6bff; }
+    .cal-legend .apply2 { background: #ffb067; }
+    .cal-legend .use2 { background: #e8590c; }
+    .notes .note-round2 { color: #c2410c; }
     .notice { padding: 36px 0 0; }
     .notice-card {
       border: 2px solid #ffc9c9;
@@ -1004,6 +1131,136 @@
     .admin-reply textarea { min-height: 80px; }
 
     .faq { max-width: 760px; margin: 28px auto 0; display: grid; gap: 10px; text-align: left; }
+    .earlybird {
+      position: relative;
+      overflow: hidden;
+      padding: 72px 0;
+      background: #fff3d6;
+    }
+    .earlybird::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, #ffb15a, #ffe45c, #ff7e33);
+    }
+    .earlybird-glow {
+      pointer-events: none;
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(28px);
+    }
+    .earlybird-glow--a { left: -4rem; top: 2rem; width: 14rem; height: 14rem; background: rgba(255, 224, 138, 0.85); }
+    .earlybird-glow--b { right: -2rem; bottom: 0; width: 16rem; height: 16rem; background: rgba(255, 208, 137, 0.7); }
+    .earlybird-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr);
+      align-items: center;
+      gap: 24px;
+      padding: 40px 48px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 36px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 24px 60px rgba(214, 146, 42, 0.22);
+    }
+    .earlybird-kicker {
+      display: inline-flex;
+      margin: 0;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: #16356f;
+      color: #ffe45c;
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .earlybird-card h2 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 12px;
+      margin-top: 16px;
+      color: #16356f;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+    }
+    .earlybird-card h2 span {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--accent-yellow);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1;
+    }
+    .earlybird-period {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 8px;
+      margin: 18px 0 0;
+      padding: 12px 16px;
+      border-radius: 16px;
+      background: #fff6dc;
+      color: #16356f;
+      font-size: 15px;
+      font-weight: 800;
+      box-shadow: inset 0 0 0 1px #ffd36a;
+    }
+    .earlybird-period span { font-weight: 700; color: #5c4514; }
+    .earlybird-lead {
+      margin: 18px 0 0;
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.45;
+    }
+    .earlybird-note {
+      margin: 10px 0 0;
+      color: #3d4a63;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    .earlybird-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 24px;
+      min-height: 56px;
+      padding: 0 28px;
+      border-radius: 999px;
+      background: #16356f;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 12px 24px rgba(22, 53, 111, 0.28);
+    }
+    .earlybird-btn:hover { background: #10284f; }
+    .earlybird-art {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      width: min(100%, 430px);
+      margin-left: auto;
+      min-height: 280px;
+    }
+    .earlybird-col { position: relative; width: 48%; }
+    .earlybird-col img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 14px 12px rgba(90, 70, 30, 0.2));
+    }
+    .earlybird-book { display: block; width: 92%; transform: rotate(-6deg); }
+    .earlybird-timer { position: absolute; left: 4%; top: 64%; width: 88%; }
+    .earlybird-col--right { width: 42%; margin-left: -6px; }
+    .earlybird-artbook { display: block; width: 88%; margin-left: auto; transform: rotate(1deg); }
+    .earlybird-sooop { position: absolute; right: 8%; top: 64%; width: 78%; }
     details {
       background: #fff;
       border: 1px solid var(--line);
@@ -1045,14 +1302,16 @@
     .footer-brand { filter: brightness(0) invert(1); width: 150px; }
 
     @media (max-width: 1440px) {
-      .wrap {
+      .wrap,
+      .hero__inner {
         width: min(1200px, calc(100% - 150px));
         margin-left: auto;
         margin-right: 120px;
       }
+      .hero__inner { width: min(720px, calc(100% - 150px)); }
     }
     @media (max-width: 980px) {
-      .hero-grid, .rounds, .steps, .qa-row { grid-template-columns: 1fr; }
+      .hero-grid, .rounds, .steps, .qa-row, .earlybird-card { grid-template-columns: 1fr; }
       .features { grid-template-columns: 1fr; }
       .feature, .feature:nth-child(4), .feature:nth-child(5) { grid-column: auto; }
       .prize { flex-direction: column; align-items: flex-start; border-radius: 28px; padding: 20px; }
@@ -1065,6 +1324,7 @@
       .site-header .wrap { padding: 12px 0; }
       .scene { max-width: 420px; }
       .wrap { width: min(1200px, calc(100% - 16px - 92px)); margin-right: 88px; margin-left: auto; transform: none; }
+      .hero__inner { width: min(720px, calc(100% - 16px - 92px)); margin-right: 88px; margin-left: auto; }
       .quick-nav { width: auto; right: 8px; padding: 6px; border-radius: 22px; }
       .quick-label { display: none; }
       .quick-nav a { padding: 6px; gap: 0; }
@@ -1073,17 +1333,28 @@
     }
     @media (max-width: 640px) {
       .wrap { width: min(1200px, calc(100% - 12px - 92px)); margin-right: 86px; margin-left: auto; transform: none; }
+      .hero__inner { width: min(720px, calc(100% - 12px - 92px)); margin-right: 86px; margin-left: auto; }
+      .id-row { flex-direction: column; }
+      .btn-check { width: 100%; }
+      .earlybird-card { padding: 28px 20px; }
+      .earlybird-btn { width: 100%; }
       section { padding: 64px 0; }
       .brand img { width: 124px; }
       .callout { border-radius: 22px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .float,
+      .float-deco,
+      .hero__kicker,
+      .hero__title,
+      .hero__badge,
+      .hero__guide,
+      .hero__guide-emph,
+      .hero__guide-list,
+      .congrats,
       .step-link,
       .step-link::after,
-      .spark,
-      .status-dot { animation: none; }
+      .spark { animation: none; }
     }
   </style>
 </head>
@@ -1098,6 +1369,10 @@
     </div>
   </header>
   <nav class="quick-nav" aria-label="사용 안내 메뉴">
+    <a href="#cohort" data-spy aria-label="차수 확인">
+      <span class="quick-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/><path d="M8.5 12.2 11 14.5 15.5 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="quick-label">차수<br />확인</span>
+    </a>
     <a href="#howto" data-spy aria-label="사용 방법">
       <span class="quick-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 6h11M8 12h11M8 18h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="4.5" cy="6" r="1.25" fill="currentColor"/><circle cx="4.5" cy="12" r="1.25" fill="currentColor"/><circle cx="4.5" cy="18" r="1.25" fill="currentColor"/></svg></span>
       <span class="quick-label">사용<br />방법</span>
@@ -1122,65 +1397,68 @@
 
   <main id="main">
     <section class="hero" id="top">
-      <div class="blob blob-a"></div>
-      <div class="blob blob-b"></div>
-      <div class="blob blob-c"></div>
-      <div class="wrap">
-        <div class="hero-grid">
-          <div>
-            <h1>
-              <span class="lead">선생님은 아이스크림 계정으로,<br />학생은 QR코드로 간편하게 사용해보세요!</span>
-              <span class="brand-banner">
-                <span class="aidt-tag">구) AIDT</span>
-                <span class="brand-banner-title">AI 디지털 교육자료(수학)</span>
-              </span>
-              <span class="guide-label">무료 체험 사용 안내 페이지 입니다.</span>
-              <span class="guide-help">체험 중 문의 사항이나 불편 사항은<br />아래 [이용 문의] 섹션을 이용해주세요.</span>
-            </h1>
-            <p class="hero-copy">
-              신청해 주신 선생님을 위한 안내입니다.<br />
-              아래 내용들을 확인해 주세요.<br />
-              선생님은 아이스크림 통합계정으로, 학생들은 QR코드로 수업에 들어옵니다.
-            </p>
-            <ul class="chips">
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 3v4M16 3v4M4 10h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                이용 기간 11.23–12.06
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="9" r="2.4" stroke="currentColor" stroke-width="2"/><path d="M3.5 19c.6-2.8 2.8-4 5.5-4s4.9 1.2 5.5 4M14 15.2c1.4-.4 2.8-.2 4.2.8.9.7 1.6 1.7 1.9 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                학생 최대 30명
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm12 2h2m-2 4h4v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                간편한 QR 입장
-              </li>
-            </ul>
-            <div class="status" id="today-status" aria-live="polite">
-              <span class="status-dot"></span>
-              <div>
-                <strong>체험 시작은 11월 23일부터입니다.</strong>
-                <p hidden></p>
-              </div>
-            </div>
-          </div>
-          <div class="scene" aria-hidden="true">
-            <div class="float f1"><img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/graph.png?v=3" alt="" /></div>
-            <div class="float f2"><img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/network.png?v=3" alt="" /></div>
-            <div class="float f3"><img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/ops.png?v=3" alt="" /></div>
-            <div class="float f4"><img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/triangle.png?v=3" alt="" /></div>
-            <div class="float f5"><img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/cube.png?v=3" alt="" /></div>
-            <div class="float f6"><img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/cylinder.png?v=3" alt="" /></div>
-            <div class="float f7"><img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/cubes.png?v=3" alt="" /></div>
-            <img class="people" src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/people.png?v=3" alt="" />
-          </div>
+      <div class="hero__blob hero__blob--a" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--b" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--c" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <p class="hero__kicker">선생님, <span class="aidt-mark">AI 디지털 교육자료<span class="hero__badge">구) AIDT</span></span> 무료 체험단</p>
+        <h1 class="hero__title">선정을 축하합니다!</h1>
+        <p class="hero__guide-emph"><a href="#cohort">차수 확인</a>에서 무료 사용 일정을 확인하신 뒤, <a href="#howto">사용 방법</a>에 따라 수업에 활용해 보세요!</p>
+        <ul class="hero__guide-list">
+          <li><a href="#cohort">[차수 확인]</a> 통합계정 ID로 무료 사용 일정 조회</li>
+          <li><a href="#howto">[사용 방법]</a> 교사는 아이스크림 통합계정 ID, 학생은 QR 입장</li>
+          <li><a href="#schedule">[이용 일정]</a> 1차·2차 기간 및 최대 2주 연장 안내</li>
+          <li><span class="guide-bracket">[</span><a href="#features">주요 기능</a> & <a href="#contact">이용 문의</a><span class="guide-bracket">]</span> 핵심 기능 안내와 문의 게시판</li>
+        </ul>
+        <div class="hero__scene" aria-hidden="true">
+          <div class="hero__scene-dots"></div>
+          <span class="float-deco float-deco--1">
+            <img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/ops.png?v=3" alt="" />
+          </span>
+          <span class="float-deco float-deco--2">
+            <img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/cube.png?v=3" alt="" />
+          </span>
+          <span class="float-deco float-deco--3">
+            <img src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/triangle.png?v=3" alt="" />
+          </span>
+          <img class="hero__people" src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/scene/people.png?v=3" alt="" />
         </div>
-
+      </div>
+      <div class="wrap">
         <aside class="prize">
           <div class="prize-copy">
             <p class="prize-title">실제로 로그인을 하고 수업에 사용하신 선생님들 중 추첨을 통해 총 50분께<br /><span>네이버페이 포인트 10,000원</span>을 드려요!</p>
           </div>
           <img class="prize-visual" src="네이버페이.png" alt="네이버페이 포인트 10,000" />
+        </aside>
+      </div>
+    </section>
+
+    <section id="cohort">
+      <div class="wrap">
+        <p class="cohort-label">체험 안내</p>
+        <h2>체험 차수 확인 및 전용 서버 입장</h2>
+        <p class="cohort-lead">선생님의 아이스크림 통합계정 ID를 입력하고 배정된 일정을 확인하세요.</p>
+        <div class="id-panel">
+          <form class="id-row" id="id-form" autocomplete="off">
+            <label for="ice-id" class="visually-hidden">아이스크림 통합계정 ID</label>
+            <input id="ice-id" name="ice-id" type="text" placeholder="아이스크림 통합계정 ID" required />
+            <button type="submit" class="btn-check">확인하기</button>
+          </form>
+          <p class="id-hint">신청하신 아이스크림 통합계정 ID를 입력해 주세요.</p>
+          <div class="cohort-result" id="result" role="status" aria-live="polite" hidden>
+            <p class="result-title" id="result-title"></p>
+            <p class="result-period" id="result-period"></p>
+            <p class="result-note" id="result-note" hidden></p>
+            <a class="btn-server" id="server-link" hidden></a>
+          </div>
+        </div>
+        <aside class="congrats" aria-label="선정 축하 안내">
+          <span class="congrats__icon" aria-hidden="true">🎉</span>
+          <p class="congrats__text">
+            <span>1주일 만에 300학급 조기 마감!</span>
+            선생님, AI 디지털 교육자료 무료 체험단 선정을 축하합니다.
+          </p>
         </aside>
       </div>
     </section>
@@ -1195,7 +1473,7 @@
             <span class="step-no">01</span>
             <h3>선생님 로그인</h3>
           </article>
-          <article class="card step-card step" role="tab" tabindex="0" aria-selected="false" data-copy="300 학급에게만 특별히 열어드리는 '사전 체험 전용 독립 서버(Stage)'입니다.&#10;본 서버에서 빠르고 쾌적하게 AIDT 신기능을 마음껏 테스트해 보세요!" data-images="홈화면01.png|홈화면02.png" data-alts="AI 디지털 교육자료 홈 화면 1|AI 디지털 교육자료 홈 화면 2" data-server="true" data-title="AI 디지털 교육자료 접속 화면입니다.">
+          <article class="card step-card step" role="tab" tabindex="0" aria-selected="false" data-copy="300 학급에게만 특별히 열어드리는 '사전 체험 전용 독립 서버(Stage)'입니다.&#10;본 서버에서 빠르고 쾌적하게 AIDT 신기능을 마음껏 테스트해 보세요!" data-images="홈화면01.png|홈화면02.png" data-alts="AI 디지털 교육자료 홈 화면 1|AI 디지털 교육자료 홈 화면 2" data-title="AI 디지털 교육자료 접속 화면입니다.">
             <span class="step-no">02</span>
             <h3>AI 디지털 교육자료 접속</h3>
           </article>
@@ -1214,11 +1492,9 @@
               <div class="step-panel-text">
                 <h3 id="step-panel-title">선생님 로그인</h3>
                 <p id="step-panel-copy">선생님은 아이스크림 통합계정으로 로그인합니다.<br />무료체험은 통합계정당 1회, 실제 담당 학급 1개만 이용할 수 있습니다.</p>
-                <p class="step-cta-hint" id="step-cta-hint" hidden>우측 바로 체험하기 버튼을 클릭하세요</p>
                 <p class="step-cta-hint" id="step-login-hint">선생님의 아이스크림 통합 계정을 사용하세요.</p>
                 <p class="step-cta-hint" id="step-qr-hint" hidden>QR 코드를 인쇄해 학생들에게 나누어 주세요.</p>
               </div>
-              <a class="step-link" id="step-server-link" href="https://stage-math.smart-aidt.com" target="_blank" rel="noopener noreferrer" hidden><span class="step-link-label">바로 체험하기</span><span class="spark spark-a" aria-hidden="true"></span><span class="spark spark-b" aria-hidden="true"></span></a>
             </div>
           </div>
           <div class="step-stage">
@@ -1240,17 +1516,30 @@
         <p class="eyebrow">이용 일정</p>
         <h2>일정을 꼭! 확인해주세요.</h2>
         <div class="month-cal">
+          <ul class="cal-legend">
+            <li><i class="apply" aria-hidden="true"></i>1차 신청</li>
+            <li><i class="use" aria-hidden="true"></i>1차 이용</li>
+            <li><i class="apply2" aria-hidden="true"></i>2차 신청</li>
+            <li><i class="use2" aria-hidden="true"></i>2차 이용</li>
+          </ul>
           <h3>2026년 11월</h3>
           <div class="cal-head" aria-hidden="true"><span class="sun">일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div>
-          <div class="cal-grid" role="img" aria-label="11월 9일부터 10일까지 1차 신청, 11월 16일 발급, 11월 23일부터 1차 이용">
+          <div class="cal-grid" role="img" aria-label="11월 9일부터 10일까지 1차 신청, 11월 11일부터 18일까지 2차 신청, 11월 23일부터 1차 이용, 11월 30일 2차 이용 시작">
             <div class="day"><span class="num sun">1</span></div><div class="day"><span class="num">2</span></div><div class="day"><span class="num">3</span></div><div class="day"><span class="num">4</span></div><div class="day"><span class="num">5</span></div><div class="day"><span class="num">6</span></div><div class="day"><span class="num">7</span></div>
             <div class="day"><span class="num sun">8</span></div>
             <div class="day"><span class="num">9</span><span class="bar apply start show">1차 신청</span></div>
             <div class="day"><span class="num">10</span><span class="bar apply end"></span></div>
-            <div class="day"><span class="num">11</span></div><div class="day"><span class="num">12</span></div><div class="day"><span class="num">13</span></div><div class="day"><span class="num">14</span></div>
-            <div class="day"><span class="num sun">15</span></div>
-            <div class="day"><span class="num">16</span><span class="issue">발급</span></div>
-            <div class="day"><span class="num">17</span></div><div class="day"><span class="num">18</span></div><div class="day"><span class="num">19</span></div><div class="day"><span class="num">20</span></div><div class="day"><span class="num">21</span></div>
+            <div class="day"><span class="num">11</span><span class="bar apply2 start show">2차 신청</span></div>
+            <div class="day"><span class="num">12</span><span class="bar apply2"></span></div>
+            <div class="day"><span class="num">13</span><span class="bar apply2"></span></div>
+            <div class="day"><span class="num">14</span><span class="bar apply2 end"></span></div>
+            <div class="day"><span class="num sun">15</span><span class="bar apply2 start show">2차 신청</span></div>
+            <div class="day"><span class="num">16</span><span class="bar apply2"></span></div>
+            <div class="day"><span class="num">17</span><span class="bar apply2"></span></div>
+            <div class="day"><span class="num">18</span><span class="bar apply2 end"></span></div>
+            <div class="day"><span class="num">19</span></div>
+            <div class="day"><span class="num">20</span></div>
+            <div class="day"><span class="num">21</span></div>
             <div class="day"><span class="num sun">22</span></div>
             <div class="day"><span class="num">23</span><span class="bar use start show">1차 이용</span></div>
             <div class="day"><span class="num">24</span><span class="bar use"></span></div>
@@ -1259,24 +1548,31 @@
             <div class="day"><span class="num">27</span><span class="bar use"></span></div>
             <div class="day"><span class="num">28</span><span class="bar use end"></span></div>
             <div class="day"><span class="num sun">29</span><span class="bar use start"></span></div>
-            <div class="day"><span class="num">30</span><span class="bar use end"></span></div>
+            <div class="day"><span class="num">30</span><span class="bar use end"></span><span class="bar use2 start end show">2차 이용</span></div>
           </div>
           <h3>2026년 12월</h3>
           <div class="cal-head" aria-hidden="true"><span class="sun">일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div>
-          <div class="cal-grid" role="img" aria-label="12월 1일부터 6일까지 1차 이용">
+          <div class="cal-grid" role="img" aria-label="12월 1일부터 6일까지 1차 이용, 12월 1일부터 13일까지 2차 이용">
             <div class="day"></div><div class="day"></div>
-            <div class="day"><span class="num">1</span><span class="bar use start show">1차 이용</span></div>
-            <div class="day"><span class="num">2</span><span class="bar use"></span></div>
-            <div class="day"><span class="num">3</span><span class="bar use"></span></div>
-            <div class="day"><span class="num">4</span><span class="bar use"></span></div>
-            <div class="day"><span class="num">5</span><span class="bar use end"></span></div>
-            <div class="day"><span class="num sun">6</span><span class="bar use start end show">1차 이용</span></div>
+            <div class="day"><span class="num">1</span><span class="bar use start show">1차 이용</span><span class="bar use2 start show">2차 이용</span></div>
+            <div class="day"><span class="num">2</span><span class="bar use"></span><span class="bar use2"></span></div>
+            <div class="day"><span class="num">3</span><span class="bar use"></span><span class="bar use2"></span></div>
+            <div class="day"><span class="num">4</span><span class="bar use"></span><span class="bar use2"></span></div>
+            <div class="day"><span class="num">5</span><span class="bar use end"></span><span class="bar use2 end"></span></div>
+            <div class="day"><span class="num sun">6</span><span class="bar use start end show">1차 이용</span><span class="bar use2 start show">2차 이용</span></div>
+            <div class="day"><span class="num">7</span><span class="bar slot"></span><span class="bar use2"></span></div>
+            <div class="day"><span class="num">8</span><span class="bar slot"></span><span class="bar use2"></span></div>
+            <div class="day"><span class="num">9</span><span class="bar slot"></span><span class="bar use2"></span></div>
+            <div class="day"><span class="num">10</span><span class="bar slot"></span><span class="bar use2"></span></div>
+            <div class="day"><span class="num">11</span><span class="bar slot"></span><span class="bar use2"></span></div>
+            <div class="day"><span class="num">12</span><span class="bar slot"></span><span class="bar use2 end"></span></div>
+            <div class="day"><span class="num sun">13</span><span class="bar use2 start end show">2차 이용</span></div>
           </div>
         </div>
         <p class="callout">이용기간 연장이 필요하신 경우에는 개별 연락주시면 최대 2주 더 연장이 가능합니다.</p>
         <ul class="notes">
-          <li class="note-strong">이용 기간은 2026년 11월 23일부터 12월 6일까지입니다.</li>
-          <li>아래 내용들을 확인해 주세요.</li>
+          <li class="note-strong">1차 체험단 이용 기간은 2026년 11월 23일부터 12월 6일까지입니다.</li>
+          <li class="note-strong note-round2">2차 체험단 이용 기간은 2026년 11월 30일부터 12월 13일까지입니다.</li>
           <li>신청 정보 및 교원인증 확인 결과에 따라 발급이 제한될 수 있습니다.</li>
           <li>동일 학교·학년·반에는 1개의 체험 계정만 발급됩니다. 실제 담당 학급 정보를 기준으로 확인해 주세요.</li>
         </ul>
@@ -1286,7 +1582,7 @@
     <section id="features">
       <div class="wrap">
         <p class="eyebrow">수업에서 열어보기</p>
-        <h2>체험 기간에 이용하실 수 있는 주요 기능을 안내합니다.</h2>
+        <h2>아이스크림 AI 디지털 교육자료(수학)의 주요 기능을 안내합니다.</h2>
         <p class="section-lead">새로워진 AI 디지털 교육자료를 우리 반 학생들과 직접 경험해 보세요.</p>
         <div class="steps" role="tablist" aria-label="체험 기능">
           <article class="card step-card step is-selected" role="tab" tabindex="0" aria-selected="true" data-demo-src="수업화면/index.html" data-copy="아이스크림 수학교과서와 진도에 맞춘 수학익힘을 수업 중 바로 엽니다. 모둠 구성, 발표자 뽑기, 자리 바꾸기, 룰렛 같은 수업 도구와 AI 수학교구도 수업 안에서 함께 쓸 수 있습니다.">
@@ -1322,12 +1618,12 @@
       <div class="wrap">
         <p class="eyebrow">이용 문의</p>
         <h2>선생님들의 질문과 답변을 모아두었어요</h2>
-        <p class="section-lead">등록하신 문의와 답변은 체험에 참여하는 모든 선생님들과 공유됩니다.<br />단, 소속 학교, 아이디, 이름, 연락처 등의 개인정보는 운영팀만 안전하게 확인하며 게시판에 공개되지 않습니다.</p>
+        <p class="section-lead">등록하신 문의와 답변은 체험에 참여하는 모든 선생님들과 공유됩니다.<br />단, 교육청, 학교, 아이디, 이름, 연락처 등의 개인정보는 운영팀만 안전하게 확인하며 게시판에 공개되지 않습니다.</p>
         <form class="board-form" id="board-form">
           <h3 class="board-step">01 일반 문의</h3>
           <p class="board-notice">일반적인 이용 문의는 개인 정보 동의 없이 바로 남기실 수 있습니다.<br />단, 발급된 계정 관련 추가 조치가 필요한 경우, 개인정보 수집 동의 후, 추가 요청 문의를 남겨주시면, 신속한 처리가 가능합니다.</p>
           <label for="board-question">문의 내용 <span id="question-visibility">문의하신 내용과 답변은 모든 분들과 함께 볼 수 있어요!</span>
-            <textarea id="board-question" name="question" maxlength="2000" required placeholder="QR코드 접속 방법이나 교육자료의 여러 기능 등에 대해 궁금한 점을 자유롭게 남겨 주세요."></textarea>
+            <textarea id="board-question" name="question" maxlength="2000" required placeholder="체험 하시면서 QR 코드, 계정 이용 등 궁금하신 점을 자유롭게 남겨 주세요."></textarea>
           </label>
           <h3 class="board-step">02 추가 요청 문의</h3>
           <p class="board-notice">일반 문의 외에, 발급된 계정 관련 조치가 필요한 경우 아래 체크 박스 클릭 후, 추가 정보를 입력해 주세요.<br />계정 발급 확인이나 별도 조치가 필요한 경우만 체크 후 아래 정보를 입력해 주세요.</p>
@@ -1342,7 +1638,7 @@
           </details>
           <label class="consent" for="board-agree">
             <input id="board-agree" name="agree" type="checkbox" />
-            발급된 계정의 별도 조치를 위한 개인정보 제공에 동의합니다.
+            [계정 오류 조치 및 지원 요청] 계정 발급 확인이나 별도 조치를 위한 정보 제공에 동의합니다.
           </label>
           <fieldset class="account-fields" id="account-fields" hidden disabled>
             <label for="board-office">소속 교육청
@@ -1360,7 +1656,7 @@
             <label for="board-phone">연락처 <span>000-0000-0000, 요청 사항 처리를 위한 용도로만 사용됩니다.</span>
               <input id="board-phone" name="phone" maxlength="20" inputmode="tel" placeholder="000-0000-0000" />
             </label>
-            <label for="board-private">이메일 <span>Email 필수. 요청 사항 처리를 위한 용도로만 사용됩니다.</span>
+            <label for="board-private">비공개 연락처 <span>Email 필수. 요청 사항 처리를 위한 용도로만 사용됩니다.</span>
               <input id="board-private" name="privateNote" type="email" maxlength="500" placeholder="이메일을 입력해주세요." />
             </label>
           </fieldset>
@@ -1381,6 +1677,33 @@
           <input id="admin-password" type="password" autocomplete="current-password" placeholder="답변 비밀번호" />
           <button class="btn light" type="submit">확인</button>
         </form>
+      </div>
+    </section>
+
+    <section class="earlybird" id="earlybird" aria-label="얼리버드 도입 예약 이벤트">
+      <div class="earlybird-glow earlybird-glow--a" aria-hidden="true"></div>
+      <div class="earlybird-glow earlybird-glow--b" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="earlybird-card">
+          <div>
+            <p class="earlybird-kicker">2027년 신학기</p>
+            <h2>얼리버드 도입 예약 이벤트 <span>오픈 예정</span></h2>
+            <p class="earlybird-period">이벤트 기간 <span>2026년 12월 21일 ~ 2027년 1월 31일</span></p>
+            <p class="earlybird-lead">선생님 뿐만 아니라 우리 반 학생 선물까지 드리는 빅 이벤트!</p>
+            <p class="earlybird-note">곧 2027년 신학기 얼리버드 이벤트로 만나요~</p>
+            <a class="earlybird-btn" href="https://aidt.i-scream.co.kr/customer/notice/20" target="_blank" rel="noopener noreferrer">얼리버드 이벤트 살펴보기 →</a>
+          </div>
+          <div class="earlybird-art" aria-hidden="true">
+            <div class="earlybird-col">
+              <img class="earlybird-book" src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/early-bird/workbook.png" alt="" />
+              <img class="earlybird-timer" src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/early-bird/timer.png" alt="" />
+            </div>
+            <div class="earlybird-col earlybird-col--right">
+              <img class="earlybird-artbook" src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/early-bird/artbook.png" alt="" />
+              <img class="earlybird-sooop" src="https://i-screammedia-aidt-free-trial-event.vercel.app/media/early-bird/sooop.png" alt="" />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1442,50 +1765,125 @@
 
   <script>
     (function () {
-      var round = { applyStart: "2026-11-09", applyEnd: "2026-11-10", useStart: "2026-11-23", useEnd: "2026-12-06" };
+      var LOOKUP_URL = "https://script.google.com/macros/s/AKfycbw1V9TtN96t5DIvYC2wog42rHnrE2uM0zs5pzuHLSJIDhwSx8uDlWeA5C9FZ2zDsYhv/exec";
+      var COHORTS = {
+        "1": {
+          label: "1차 체험단",
+          period: "11월 23일(월) ~ 12월 6일(일)",
+          serverLabel: "바로 체험하기",
+          serverUrl: "https://stage-math.smart-aidt.com/"
+        },
+        "2": {
+          label: "2차 체험단",
+          period: "11월 30일(월) ~ 12월 13일(일)",
+          serverLabel: "",
+          serverUrl: "",
+          note: "2차 체험 기간 전입니다. 조금만 기다려주세요!"
+        }
+      };
+      var form = document.getElementById("id-form");
+      var result = document.getElementById("result");
+      var title = document.getElementById("result-title");
+      var period = document.getElementById("result-period");
+      var note = document.getElementById("result-note");
+      var serverLink = document.getElementById("server-link");
+      var input = document.getElementById("ice-id");
+      var submitButton = form.querySelector("button");
+      var busy = false;
 
-      function kstToday() {
-        var parts = new Intl.DateTimeFormat("en-CA", {
-          timeZone: "Asia/Seoul",
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit"
-        }).formatToParts(new Date());
-        var get = function (type) { return parts.filter(function (p) { return p.type === type; })[0].value; };
-        return get("year") + "-" + get("month") + "-" + get("day");
+      function showResult(isError) {
+        result.hidden = false;
+        result.classList.toggle("is-error", isError);
+        result.classList.add("is-visible");
       }
 
-      function label(iso) {
-        var bits = iso.split("-");
-        return Number(bits[1]) + "월 " + Number(bits[2]) + "일";
+      function clearActions() {
+        serverLink.hidden = true;
+        serverLink.removeAttribute("href");
+        serverLink.textContent = "";
+        note.hidden = true;
+        note.textContent = "";
       }
 
-      var today = kstToday();
-      var title = "체험 시작은 11월 23일부터입니다.";
-      var body = "";
-
-      if (today < round.applyStart) {
-        title = "1차 무료체험 신청이 곧 시작됩니다.";
-        body = "신청은 " + label(round.applyStart) + "부터입니다. 아래 내용들을 확인해 주세요.";
-      } else if (today <= round.applyEnd) {
-        title = "체험 시작은 11월 23일부터입니다.";
-        body = "";
-      } else if (today < round.useStart) {
-        title = "체험 시작은 11월 23일부터입니다.";
-        body = "";
-      } else if (today <= round.useEnd) {
-        title = "지금은 1차 이용 기간입니다.";
-        body = "1차 학급은 12월 6일까지 사용할 수 있습니다.";
-      } else {
-        title = "1차 이용 기간이 끝났습니다.";
-        body = "연장이 필요하면 개별 연락으로 최대 2주까지 요청할 수 있습니다.";
+      function showNotFound() {
+        clearActions();
+        title.textContent = "등록된 체험 명단에서 이 아이디를 찾지 못했습니다.";
+        period.textContent = "";
+        note.hidden = false;
+        note.appendChild(document.createTextNode("아이디를 다시 확인해 주세요."));
+        note.appendChild(document.createElement("br"));
+        note.appendChild(document.createTextNode("명단 확인 관련 문의는 "));
+        var mail = document.createElement("a");
+        mail.href = "mailto:aidt@i-screammedia.com";
+        mail.textContent = "aidt@i-screammedia.com";
+        note.appendChild(mail);
+        note.appendChild(document.createTextNode(" 으로 문의해 주세요."));
+        showResult(true);
       }
 
-      var status = document.getElementById("today-status");
-      var statusBody = status.querySelector("p");
-      status.querySelector("strong").textContent = title;
-      statusBody.textContent = body;
-      statusBody.hidden = !body;
+      function showMessage(isError, titleText, noteText) {
+        clearActions();
+        title.textContent = titleText;
+        period.textContent = "";
+        if (noteText) {
+          note.hidden = false;
+          note.textContent = noteText;
+        }
+        showResult(isError);
+      }
+
+      function showCohort(key) {
+        var cohort = COHORTS[key];
+        clearActions();
+        if (!cohort) {
+          showNotFound();
+          return;
+        }
+        title.textContent = "선생님은 " + cohort.label + "입니다.";
+        period.textContent = key + "차 체험 기간: " + cohort.period;
+        if (cohort.serverUrl) {
+          serverLink.hidden = false;
+          serverLink.href = cohort.serverUrl;
+          serverLink.target = "_blank";
+          serverLink.rel = "noopener noreferrer";
+          serverLink.textContent = cohort.serverLabel;
+        }
+        if (cohort.note) {
+          note.hidden = false;
+          note.textContent = cohort.note;
+        }
+        showResult(false);
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (busy) return;
+        var id = (input.value || "").trim();
+        if (!id) return;
+        busy = true;
+        submitButton.disabled = true;
+        submitButton.textContent = "확인 중";
+        fetch(LOOKUP_URL + "?id=" + encodeURIComponent(id))
+          .then(function (res) {
+            if (!res.ok) throw new Error("bad");
+            return res.json();
+          })
+          .then(function (data) {
+            if (!data || !data.ok || !COHORTS[data.cohort]) {
+              showNotFound();
+              return;
+            }
+            showCohort(data.cohort);
+          })
+          .catch(function () {
+            showMessage(true, "확인하지 못했습니다.", "잠시 후 다시 시도해 주세요.");
+          })
+          .then(function () {
+            busy = false;
+            submitButton.disabled = false;
+            submitButton.textContent = "확인하기";
+          });
+      });
     })();
 
     (function () {
@@ -1778,7 +2176,6 @@
       var cards = Array.prototype.slice.call(root.querySelectorAll(".step-card"));
       var title = document.getElementById("step-panel-title");
       var copy = document.getElementById("step-panel-copy");
-      var serverLink = document.getElementById("step-server-link");
       var shot = document.getElementById("step-shot");
       var dots = document.getElementById("shot-dots");
       var imageIndex = 0;
@@ -1798,9 +2195,6 @@
         if (imageIndex >= images.length) imageIndex = 0;
         title.textContent = card.getAttribute("data-title") || card.querySelector("h3").textContent;
         copy.textContent = card.getAttribute("data-copy") || "";
-        var isServer = card.getAttribute("data-server") === "true";
-        serverLink.hidden = !isServer;
-        document.getElementById("step-cta-hint").hidden = !isServer;
         document.getElementById("step-login-hint").hidden = card.getAttribute("data-login-hint") !== "true";
         document.getElementById("step-qr-hint").hidden = card.getAttribute("data-qr-hint") !== "true";
         shot.src = images[imageIndex];
